@@ -1,0 +1,2 @@
+module RegistroPuestosHelper
+end

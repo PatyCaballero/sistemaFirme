@@ -1,0 +1,2 @@
+class RegistroPuesto < ApplicationRecord
+end

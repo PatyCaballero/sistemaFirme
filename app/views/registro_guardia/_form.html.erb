@@ -1,0 +1,52 @@
+<%= form_with(model: registro_guardium, local: true) do |form| %>
+  <% if registro_guardium.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(registro_guardium.errors.count, "error") %> prohibited this registro_guardium from being saved:</h2>
+
+      <ul>
+      <% registro_guardium.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nombre %>
+    <%= form.text_field :nombre, id: :registro_guardium_nombre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :apellido %>
+    <%= form.text_field :apellido, id: :registro_guardium_apellido %>
+  </div>
+
+  <div class="field">
+    <%= form.label :numCedula %>
+    <%= form.number_field :numCedula, id: :registro_guardium_numCedula %>
+  </div>
+
+  <div class="field">
+    <%= form.label :direccion %>
+    <%= form.text_field :direccion, id: :registro_guardium_direccion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :telefono %>
+    <%= form.number_field :telefono, id: :registro_guardium_telefono %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fechaNacimiento %>
+    <%= form.date_select :fechaNacimiento, id: :registro_guardium_fechaNacimiento %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fechaInicio %>
+    <%= form.date_select :fechaInicio, id: :registro_guardium_fechaInicio %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

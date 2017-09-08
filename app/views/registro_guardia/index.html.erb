@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Registro Guardia</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Numcedula</th>
+      <th>Direccion</th>
+      <th>Telefono</th>
+      <th>Fechanacimiento</th>
+      <th>Fechainicio</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @registro_guardia.each do |registro_guardium| %>
+      <tr>
+        <td><%= registro_guardium.nombre %></td>
+        <td><%= registro_guardium.apellido %></td>
+        <td><%= registro_guardium.numCedula %></td>
+        <td><%= registro_guardium.direccion %></td>
+        <td><%= registro_guardium.telefono %></td>
+        <td><%= registro_guardium.fechaNacimiento %></td>
+        <td><%= registro_guardium.fechaInicio %></td>
+        <td><%= link_to 'Show', registro_guardium %></td>
+        <td><%= link_to 'Edit', edit_registro_guardium_path(registro_guardium) %></td>
+        <td><%= link_to 'Destroy', registro_guardium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Registro Guardium', new_registro_guardium_path %>

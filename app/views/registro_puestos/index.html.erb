@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Registro Puestos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombrepuesto</th>
+      <th>Direccion</th>
+      <th>Guardia</th>
+      <th>Turno</th>
+      <th>Horaentrada</th>
+      <th>Horasalida</th>
+      <th>Desde</th>
+      <th>Hasta</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @registro_puestos.each do |registro_puesto| %>
+      <tr>
+        <td><%= registro_puesto.nombrePuesto %></td>
+        <td><%= registro_puesto.direccion %></td>
+        <td><%= registro_puesto.guardia %></td>
+        <td><%= registro_puesto.turno %></td>
+        <td><%= registro_puesto.horaEntrada %></td>
+        <td><%= registro_puesto.horaSalida %></td>
+        <td><%= registro_puesto.desde %></td>
+        <td><%= registro_puesto.hasta %></td>
+        <td><%= link_to 'Show', registro_puesto %></td>
+        <td><%= link_to 'Edit', edit_registro_puesto_path(registro_puesto) %></td>
+        <td><%= link_to 'Destroy', registro_puesto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Registro Puesto', new_registro_puesto_path %>

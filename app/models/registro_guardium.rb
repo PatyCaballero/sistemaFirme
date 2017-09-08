@@ -1,0 +1,2 @@
+class RegistroGuardium < ApplicationRecord
+end

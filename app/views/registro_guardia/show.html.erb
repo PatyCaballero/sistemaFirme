@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @registro_guardium.nombre %>
+</p>
+
+<p>
+  <strong>Apellido:</strong>
+  <%= @registro_guardium.apellido %>
+</p>
+
+<p>
+  <strong>Numcedula:</strong>
+  <%= @registro_guardium.numCedula %>
+</p>
+
+<p>
+  <strong>Direccion:</strong>
+  <%= @registro_guardium.direccion %>
+</p>
+
+<p>
+  <strong>Telefono:</strong>
+  <%= @registro_guardium.telefono %>
+</p>
+
+<p>
+  <strong>Fechanacimiento:</strong>
+  <%= @registro_guardium.fechaNacimiento %>
+</p>
+
+<p>
+  <strong>Fechainicio:</strong>
+  <%= @registro_guardium.fechaInicio %>
+</p>
+
+<%= link_to 'Edit', edit_registro_guardium_path(@registro_guardium) %> |
+<%= link_to 'Back', registro_guardia_path %>
