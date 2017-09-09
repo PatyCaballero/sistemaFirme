@@ -1,0 +1,42 @@
+<%= form_with(model: puesto_registro, local: true) do |form| %>
+  <% if puesto_registro.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(puesto_registro.errors.count, "error") %> prohibited this puesto_registro from being saved:</h2>
+
+      <ul>
+      <% puesto_registro.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :puestoNombre %>
+    <%= form.text_field :puestoNombre, id: :puesto_registro_puestoNombre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :direccion %>
+    <%= form.text_field :direccion, id: :puesto_registro_direccion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :turno %>
+    <%= form.text_field :turno, id: :puesto_registro_turno %>
+  </div>
+
+  <div class="field">
+    <%= form.label :horaEntrada %>
+    <%= form.time_select :horaEntrada, id: :puesto_registro_horaEntrada %>
+  </div>
+
+  <div class="field">
+    <%= form.label :horaSalida %>
+    <%= form.time_select :horaSalida, id: :puesto_registro_horaSalida %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

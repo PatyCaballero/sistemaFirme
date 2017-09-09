@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  horaEntrada: 2017-09-08 22:41:24
+  horaSalida: 2017-09-08 22:41:24
+  estado: MyString
+  novedad: MyString
+
+two:
+  horaEntrada: 2017-09-08 22:41:24
+  horaSalida: 2017-09-08 22:41:24
+  estado: MyString
+  novedad: MyString

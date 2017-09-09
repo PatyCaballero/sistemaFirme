@@ -1,0 +1,22 @@
+<%= form_with(model: calendario, local: true) do |form| %>
+  <% if calendario.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(calendario.errors.count, "error") %> prohibited this calendario from being saved:</h2>
+
+      <ul>
+      <% calendario.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :diasTrabajados %>
+    <%= form.text_field :diasTrabajados, id: :calendario_diasTrabajados %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

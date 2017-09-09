@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fecha: MyString
+  turno: MyString
+  cantHora: 1
+  cantGuardia: 1
+  armamento: MyString
+  montoMensual: 1
+
+two:
+  fecha: MyString
+  turno: MyString
+  cantHora: 1
+  cantGuardia: 1
+  armamento: MyString
+  montoMensual: 1

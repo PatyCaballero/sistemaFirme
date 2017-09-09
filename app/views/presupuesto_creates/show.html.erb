@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @presupuesto_create.fecha %>
+</p>
+
+<p>
+  <strong>Turno:</strong>
+  <%= @presupuesto_create.turno %>
+</p>
+
+<p>
+  <strong>Canthora:</strong>
+  <%= @presupuesto_create.cantHora %>
+</p>
+
+<p>
+  <strong>Cantguardia:</strong>
+  <%= @presupuesto_create.cantGuardia %>
+</p>
+
+<p>
+  <strong>Armamento:</strong>
+  <%= @presupuesto_create.armamento %>
+</p>
+
+<p>
+  <strong>Montomensual:</strong>
+  <%= @presupuesto_create.montoMensual %>
+</p>
+
+<%= link_to 'Edit', edit_presupuesto_create_path(@presupuesto_create) %> |
+<%= link_to 'Back', presupuesto_creates_path %>

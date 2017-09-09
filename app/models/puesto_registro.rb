@@ -1,0 +1,2 @@
+class PuestoRegistro < ApplicationRecord
+end

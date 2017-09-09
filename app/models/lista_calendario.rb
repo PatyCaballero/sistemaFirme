@@ -1,0 +1,2 @@
+class ListaCalendario < ApplicationRecord
+end

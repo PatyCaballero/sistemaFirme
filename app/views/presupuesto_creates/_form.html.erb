@@ -1,0 +1,47 @@
+<%= form_with(model: presupuesto_create, local: true) do |form| %>
+  <% if presupuesto_create.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(presupuesto_create.errors.count, "error") %> prohibited this presupuesto_create from being saved:</h2>
+
+      <ul>
+      <% presupuesto_create.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :fecha %>
+    <%= form.text_field :fecha, id: :presupuesto_create_fecha %>
+  </div>
+
+  <div class="field">
+    <%= form.label :turno %>
+    <%= form.text_field :turno, id: :presupuesto_create_turno %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cantHora %>
+    <%= form.number_field :cantHora, id: :presupuesto_create_cantHora %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cantGuardia %>
+    <%= form.number_field :cantGuardia, id: :presupuesto_create_cantGuardia %>
+  </div>
+
+  <div class="field">
+    <%= form.label :armamento %>
+    <%= form.text_field :armamento, id: :presupuesto_create_armamento %>
+  </div>
+
+  <div class="field">
+    <%= form.label :montoMensual %>
+    <%= form.number_field :montoMensual, id: :presupuesto_create_montoMensual %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

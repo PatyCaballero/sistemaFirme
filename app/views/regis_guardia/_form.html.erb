@@ -1,0 +1,47 @@
+<%= form_with(model: regis_guardium, local: true) do |form| %>
+  <% if regis_guardium.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(regis_guardium.errors.count, "error") %> prohibited this regis_guardium from being saved:</h2>
+
+      <ul>
+      <% regis_guardium.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nombre %>
+    <%= form.text_field :nombre, id: :regis_guardium_nombre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :apellido %>
+    <%= form.text_field :apellido, id: :regis_guardium_apellido %>
+  </div>
+
+  <div class="field">
+    <%= form.label :numDocumento %>
+    <%= form.number_field :numDocumento, id: :regis_guardium_numDocumento %>
+  </div>
+
+  <div class="field">
+    <%= form.label :direccion %>
+    <%= form.text_field :direccion, id: :regis_guardium_direccion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :telefono %>
+    <%= form.number_field :telefono, id: :regis_guardium_telefono %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fechaNacimiento %>
+    <%= form.text_field :fechaNacimiento, id: :regis_guardium_fechaNacimiento %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

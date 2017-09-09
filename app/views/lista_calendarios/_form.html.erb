@@ -1,0 +1,22 @@
+<%= form_with(model: lista_calendario, local: true) do |form| %>
+  <% if lista_calendario.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(lista_calendario.errors.count, "error") %> prohibited this lista_calendario from being saved:</h2>
+
+      <ul>
+      <% lista_calendario.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :sueldo %>
+    <%= form.number_field :sueldo, id: :lista_calendario_sueldo %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

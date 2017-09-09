@@ -1,0 +1,2 @@
+class PresupuestoCreate < ApplicationRecord
+end

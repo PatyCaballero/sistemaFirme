@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Horaentrada:</strong>
+  <%= @reporte.horaEntrada %>
+</p>
+
+<p>
+  <strong>Horasalida:</strong>
+  <%= @reporte.horaSalida %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @reporte.estado %>
+</p>
+
+<p>
+  <strong>Novedad:</strong>
+  <%= @reporte.novedad %>
+</p>
+
+<%= link_to 'Edit', edit_reporte_path(@reporte) %> |
+<%= link_to 'Back', reportes_path %>

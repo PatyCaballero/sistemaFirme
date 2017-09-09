@@ -14,3 +14,7 @@
 # ActiveSupport::Inflector.inflections(:en) do |inflect|
 #   inflect.acronym 'RESTful'
 # end
+
+##colocar bien los nombres de las tablas.
+#inflect.irregular 'puesto', 'puestos'
+#inflect.irregular 'guardia', 'guardias'

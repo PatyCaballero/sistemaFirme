@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @regis_guardium.nombre %>
+</p>
+
+<p>
+  <strong>Apellido:</strong>
+  <%= @regis_guardium.apellido %>
+</p>
+
+<p>
+  <strong>Numdocumento:</strong>
+  <%= @regis_guardium.numDocumento %>
+</p>
+
+<p>
+  <strong>Direccion:</strong>
+  <%= @regis_guardium.direccion %>
+</p>
+
+<p>
+  <strong>Telefono:</strong>
+  <%= @regis_guardium.telefono %>
+</p>
+
+<p>
+  <strong>Fechanacimiento:</strong>
+  <%= @regis_guardium.fechaNacimiento %>
+</p>
+
+<%= link_to 'Edit', edit_regis_guardium_path(@regis_guardium) %> |
+<%= link_to 'Back', regis_guardia_path %>

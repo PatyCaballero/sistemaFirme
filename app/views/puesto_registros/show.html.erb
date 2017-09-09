@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Puestonombre:</strong>
+  <%= @puesto_registro.puestoNombre %>
+</p>
+
+<p>
+  <strong>Direccion:</strong>
+  <%= @puesto_registro.direccion %>
+</p>
+
+<p>
+  <strong>Turno:</strong>
+  <%= @puesto_registro.turno %>
+</p>
+
+<p>
+  <strong>Horaentrada:</strong>
+  <%= @puesto_registro.horaEntrada %>
+</p>
+
+<p>
+  <strong>Horasalida:</strong>
+  <%= @puesto_registro.horaSalida %>
+</p>
+
+<%= link_to 'Edit', edit_puesto_registro_path(@puesto_registro) %> |
+<%= link_to 'Back', puesto_registros_path %>
