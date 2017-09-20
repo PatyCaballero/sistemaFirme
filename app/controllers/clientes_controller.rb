@@ -72,3 +72,4 @@ class ClientesController < ApplicationController
       params.require(:cliente).permit(:cliente, :numRuc, :direccion, :telefono, :estado)
     end
 end
+

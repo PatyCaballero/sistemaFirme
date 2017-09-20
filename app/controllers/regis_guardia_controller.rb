@@ -28,7 +28,7 @@ class RegisGuardiaController < ApplicationController
 
     respond_to do |format|
       if @regis_guardium.save
-        format.html { redirect_to @regis_guardium, notice: 'Regis guardium was successfully created.' }
+        format.html { redirect_to @regis_guardium, notice: 'Se ha creado.' }
         format.json { render :show, status: :created, location: @regis_guardium }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class RegisGuardiaController < ApplicationController
   def update
     respond_to do |format|
       if @regis_guardium.update(regis_guardium_params)
-        format.html { redirect_to @regis_guardium, notice: 'Regis guardium was successfully updated.' }
+        format.html { redirect_to @regis_guardium, notice: 'Se actualizo.' }
         format.json { render :show, status: :ok, location: @regis_guardium }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class RegisGuardiaController < ApplicationController
   def destroy
     @regis_guardium.destroy
     respond_to do |format|
-      format.html { redirect_to regis_guardia_url, notice: 'Regis guardium was successfully destroyed.' }
+      format.html { redirect_to regis_guardia_url, notice: 'Se ha Eliminado.' }
       format.json { head :no_content }
     end
   end
