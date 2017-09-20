@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Puesto Registros</h1>
+<h1>Puesto </h1>
 
 <table>
   <thead>
@@ -22,9 +22,9 @@
         <td><%= puesto_registro.turno %></td>
         <td><%= puesto_registro.horaEntrada %></td>
         <td><%= puesto_registro.horaSalida %></td>
-        <td><%= link_to 'Show', puesto_registro %></td>
-        <td><%= link_to 'Edit', edit_puesto_registro_path(puesto_registro) %></td>
-        <td><%= link_to 'Destroy', puesto_registro, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', puesto_registro %></td>
+        <td><%= link_to 'Editar', edit_puesto_registro_path(puesto_registro) %></td>
+        <td><%= link_to 'Eliminar', puesto_registro, method: :delete, data: { confirm: 'Estas Seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Puesto Registro', new_puesto_registro_path %>
+<%= link_to 'Nuevo Puesto', new_puesto_registro_path %>
