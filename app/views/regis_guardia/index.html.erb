@@ -1,37 +1,78 @@
 <p id="notice"><%= notice %></p>
+<div id="main-container" class="container">
+      <div class="row">
+      <div class="col-xs-12">
+        <div class="col-xs-3">
+            <h2>Registrar Guardia</h2><br><br><br>
 
-<h1>Regis Guardia</h1>
+        </div>
+        <div class="col-xs-5">
+        </div>
+        <div class="col-xs-3">
+            <%= link_to new_regis_guardium_path, class: 'btn btn-success' do %>
+            <i class="glyphicon glyphicon-user"></i> Nuevo Registro
+             <% end %>
+             <!--<%= link_to "Nuevo Producto", new_regis_guardium_path, remote: true, class: "btn btn-primary" %> -->
 
-<table>
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Apellido</th>
-      <th>Numdocumento</th>
-      <th>Direccion</th>
-      <th>Telefono</th>
-      <th>Fechanacimiento</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+             <!--<button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
+                     <i class="glyphicon glyphicon-user"></i>Nuevo Registro
+                  </button>-->
 
-  <tbody>
-    <% @regis_guardia.each do |regis_guardium| %>
-      <tr>
-        <td><%= regis_guardium.nombre %></td>
-        <td><%= regis_guardium.apellido %></td>
-        <td><%= regis_guardium.numDocumento %></td>
-        <td><%= regis_guardium.direccion %></td>
-        <td><%= regis_guardium.telefono %></td>
-        <td><%= regis_guardium.fechaNacimiento %></td>
-        <td><%= link_to 'Show', regis_guardium %></td>
-        <td><%= link_to 'Edit', edit_regis_guardium_path(regis_guardium) %></td>
-        <td><%= link_to 'Destroy', regis_guardium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        </div>
 
+          <div class="col-xs-12">
+            <div class="jumbotron">
+              <div class="container">
+              <div class="row">
+                <div class="col-xs-1">
+                </div>
+                <div class="col-xs-3">
+                   
+                      <table class="table table-hover">
+                            <thead>
+                              <tr>
+                                <b><th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Nº C.I</th>
+                                <th>Direccion</th>
+                                <th>Telefono</th>
+                                <th>FechaNacimiento</th>
+                                <th colspan="3"></th></b>
+                              </tr>
+                            </thead>
+
+                            <tbody>
+                              <% @regis_guardia.each do |regis_guardium| %>
+                                <tr>
+                                  <td><%= regis_guardium.nombre %></td>
+                                  <td><%= regis_guardium.apellido %></td>
+                                  <td><%= regis_guardium.numDocumento %></td>
+                                  <td><%= regis_guardium.direccion %></td>
+                                  <td><%= regis_guardium.telefono %></td>
+                                  <td><%= regis_guardium.fechaNacimiento %></td>
+                                  <td><%= link_to regis_guardium, class: 'btn btn-info' do %>
+                                    <i class="glyphicon glyphicon-eye-open"></i> Ver
+                                    <% end %> </td>
+                                  <td><%= link_to edit_regis_guardium_path(regis_guardium), class: 'btn btn-info' do %>
+                                    <i class="glyphicon glyphicon-edit"></i> Editar <% end %>
+                                  </td>
+                                  <td><%= link_to regis_guardium, method: :delete, data: { confirm: 'Estás seguro de Borrar?' } , class: 'btn btn-primary' do %>
+                                    <i class="glyphicon glyphicon-trash"></i> Eliminar <% end %>
+                                  </td>
+                                </tr>
+                              <% end %>
+                            </tbody>
+                      </table>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
 <br>
+</div>
 
-<%= link_to 'New Regis Guardium', new_regis_guardium_path %>
+</div>
+</div>
+</div>
+
+
