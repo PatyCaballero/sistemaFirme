@@ -6,9 +6,53 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- Menu -->
+    <nav class="navbar navbar-default navbar-static-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Firme S.A</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Recursos Humanos <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="http://localhost:3000/regis_guardia">Guardias</a></li>
+            <li><a href="http://localhost:3000/puesto_registros">Puestos</a></li>
+            <li><a href="http://localhost:3000/calendarios">Calendario</a></li>
+          </ul>
+        </li>
+        <li><a href="http://localhost:3000/clientes">Clientes</a></li>
+        <li><a href="#">Stock</a></li>
+        <li><a href="#">Documentos </a></li>
+        <li><a href="http://localhost:3000/presupuesto_creates">Presupuesto</a></li>
+
+        <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Reportes <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li><a href="http://localhost:3000/">Asistencias</a></li>
+            <li><a href="http://localhost:3000/">Alertas</a></li>
+            <li><a href="http://localhost:3000/">Informes</a></li>
+         </ul>
+        </li>
+      </ul>
+      
+   </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
   </head>
 
   <body>
     <%= yield %>
+
   </body>
 </html>
