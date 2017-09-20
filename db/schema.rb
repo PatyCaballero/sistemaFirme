@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20170909024124) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "calendarios", force: :cascade do |t|
     t.string "diasTrabajados"
     t.datetime "created_at", null: false
@@ -28,29 +31,6 @@ ActiveRecord::Schema.define(version: 20170909024124) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "guardia", force: :cascade do |t|
-    t.string "nombre"
-    t.string "apellido"
-    t.integer "numCedula"
-    t.string "direccion"
-    t.integer "telefono"
-    t.date "fechaNacimiento"
-    t.date "fechaInicio"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "guardia_registros", force: :cascade do |t|
-    t.string "nombre"
-    t.string "apellido"
-    t.integer "numDocumento"
-    t.string "direccion"
-    t.integer "telefono"
-    t.date "fechaNacimiento"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "lista_calendarios", force: :cascade do |t|
     t.integer "sueldo"
     t.datetime "created_at", null: false
@@ -59,17 +39,6 @@ ActiveRecord::Schema.define(version: 20170909024124) do
 
   create_table "presupuesto_creates", force: :cascade do |t|
     t.string "fecha"
-    t.string "turno"
-    t.integer "cantHora"
-    t.integer "cantGuardia"
-    t.string "armamento"
-    t.integer "montoMensual"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "presupuestos", force: :cascade do |t|
-    t.date "fecha"
     t.string "turno"
     t.integer "cantHora"
     t.integer "cantGuardia"
@@ -96,31 +65,6 @@ ActiveRecord::Schema.define(version: 20170909024124) do
     t.string "direccion"
     t.integer "telefono"
     t.string "fechaNacimiento"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "registro_guardia", force: :cascade do |t|
-    t.string "nombre"
-    t.string "apellido"
-    t.integer "numCedula"
-    t.string "direccion"
-    t.integer "telefono"
-    t.date "fechaNacimiento"
-    t.date "fechaInicio"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "registro_puestos", force: :cascade do |t|
-    t.string "nombrePuesto"
-    t.string "direccion"
-    t.string "guardia"
-    t.string "turno"
-    t.time "horaEntrada"
-    t.time "horaSalida"
-    t.date "desde"
-    t.date "hasta"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
