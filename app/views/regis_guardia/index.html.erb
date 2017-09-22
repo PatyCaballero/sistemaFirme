@@ -4,20 +4,17 @@
       <div class="col-xs-12">
         <div class="col-xs-3">
             <h2>Registrar Guardia</h2><br><br><br>
-
         </div>
-        <div class="col-xs-5">
+      
+        <div class="col-xs-5">        
         </div>
-        <div class="col-xs-3">
-            <%= link_to new_regis_guardium_path, class: 'btn btn-success' do %>
-            <i class="glyphicon glyphicon-user"></i> Nuevo Registro
-             <% end %>
-             <!--<%= link_to "Nuevo Producto", new_regis_guardium_path, remote: true, class: "btn btn-primary" %> -->
-
-             <!--<button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
-                     <i class="glyphicon glyphicon-user"></i>Nuevo Registro
-                  </button>-->
-
+        <div class="col-xs-4">
+            <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Buscar">
+                </div>
+                <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+            </form>
         </div>
 
           <div class="col-xs-12">
@@ -27,21 +24,20 @@
                 <div class="col-xs-1">
                 </div>
                 <div class="col-xs-3">
-                   
-                      <table class="table table-hover">
-                            <thead>
-                              <tr>
-                                <b><th>Nombre</th>
-                                <th>Apellido</th>
-                                <th>Nº C.I</th>
-                                <th>Direccion</th>
-                                <th>Telefono</th>
-                                <th>FechaNacimiento</th>
-                                <th colspan="3"></th></b>
-                              </tr>
-                            </thead>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                              <b><th>Nombre</th>
+                              <th>Apellido</th>
+                              <th>Nº C.I</th>
+                              <th>Direccion</th>
+                              <th>Telefono</th>
+                              <th>FechaNacimiento</th>
+                              <th colspan="3"></th></b>
+                            </tr>
+                        </thead>
 
-                            <tbody>
+                        <tbody>
                               <% @regis_guardia.each do |regis_guardium| %>
                                 <tr>
                                   <td><%= regis_guardium.nombre %></td>
@@ -50,25 +46,43 @@
                                   <td><%= regis_guardium.direccion %></td>
                                   <td><%= regis_guardium.telefono %></td>
                                   <td><%= regis_guardium.fechaNacimiento %></td>
+
+
                                   <td><%= link_to regis_guardium, class: 'btn btn-info' do %>
                                     <i class="glyphicon glyphicon-eye-open"></i> Ver
                                     <% end %> </td>
+
                                   <td><%= link_to edit_regis_guardium_path(regis_guardium), class: 'btn btn-info' do %>
                                     <i class="glyphicon glyphicon-edit"></i> Editar <% end %>
                                   </td>
+
                                   <td><%= link_to regis_guardium, method: :delete, data: { confirm: 'Estás seguro de Borrar?' } , class: 'btn btn-primary' do %>
                                     <i class="glyphicon glyphicon-trash"></i> Eliminar <% end %>
                                   </td>
+
                                 </tr>
                               <% end %>
                             </tbody>
                       </table>
                     </div>
+
                   </div>
               </div>
             </div>
           </div>
-<br>
+
+          <div class="col-xs-3">
+            <%= link_to new_regis_guardium_path, class: 'btn btn-success' do %>
+            <i class="glyphicon glyphicon-user"></i> Nuevo Registro
+             <% end %>
+          </div>
+
+          <div class="col-xs-5">
+          </div>
+          <div class="col-xs-4">
+          <button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-print"></i>Imprimir</button>
+          </div>
+
 </div>
 
 </div>
