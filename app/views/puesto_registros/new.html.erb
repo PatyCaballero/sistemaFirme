@@ -1,5 +1,18 @@
-<h1>Nuevo Registro de Puesto</h1>
+<div id="main-container" class="container">
+      <div class="row">
+      <div class="col-xs-12">
+	        <div class="col-xs-3">
+					<h1>Nuevo Registro de Puesto</h1><br><br><br>
 
-<%= render 'form', puesto_registro: @puesto_registro %>
+			</div>
+		</div>
 
-<%= link_to 'Atras', puesto_registros_path %>
+			
+	        <div class="col-xs-6">
+
+				<%= render 'form', puesto_registro: @puesto_registro %>
+
+				<%= link_to puesto_registros_path, class: "btn btn-default"  do %><i class="glyphicon glyphicon-arrow-left"></i> Atras <% end %>
+			</div>
+		</div>
+</div>
