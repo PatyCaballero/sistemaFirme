@@ -1,29 +1,51 @@
 <p id="notice"><%= notice %></p>
+<div id="main-container" class="container">
+      <div class="row"><br><br>
+      <div class="col-xs-12">
+          <div class="col-xs-6">
+          </div>
 
-<p>
-  <strong>Cliente:</strong>
-  <%= @cliente.cliente %>
-</p>
+          <div class="col-xs-6">
+              <%= link_to edit_cliente_path(@cliente), class: "btn btn-info" do %><i class="glyphicon glyphicon-pencil"></i> Editar <% end %> |
+              <%= link_to clientes_path class: "btn btn-default"  do %><i class="glyphicon glyphicon-arrow-left"></i> Atras <% end %>
+          </div>
+          <br><br><br><br>
+          <div class="col-xs-10">
+            <table class="table table-striped">
 
-<p>
-  <strong>Numruc:</strong>
-  <%= @cliente.numRuc %>
-</p>
+              <tbody>
+                <tr>
 
-<p>
-  <strong>Direccion:</strong>
-  <%= @cliente.direccion %>
-</p>
+                  <td><p>
+                    <strong>Cliente:</strong>
+                    <%= @cliente.cliente %>
+                  </p></td>
 
-<p>
-  <strong>Telefono:</strong>
-  <%= @cliente.telefono %>
-</p>
+                  <td><p>
+                    <strong>Numruc:</strong>
+                    <%= @cliente.numRuc %>
+                  </p></td>
 
-<p>
-  <strong>Estado:</strong>
-  <%= @cliente.estado %>
-</p>
+                  <td><p>
+                    <strong>Direccion:</strong>
+                    <%= @cliente.direccion %>
+                  </p></td>
 
-<%= link_to 'Edit', edit_cliente_path(@cliente) %> |
-<%= link_to 'Back', clientes_path %>
+                  <td><p>
+                    <strong>Telefono:</strong>
+                    <%= @cliente.telefono %>
+                  </p></td>
+
+                  <td><p>
+                    <strong>Estado:</strong>
+                    <%= @cliente.estado %>
+                  </p></td>
+
+               </tr>
+              </tbody>
+            </table>          
+          </div>
+      </div>
+    </div>
+  </div>
+
