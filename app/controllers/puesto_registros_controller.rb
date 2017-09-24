@@ -24,11 +24,11 @@ class PuestoRegistrosController < ApplicationController
   # POST /puesto_registros
   # POST /puesto_registros.json
   def create
-    @puesto_registro = PuestoRegistro.new(puesto_registro_params)
+    @puesto_registro = PuestoRegistro.new( puesto_registro_params)
 
     respond_to do |format|
       if @puesto_registro.save
-        format.html { redirect_to @puesto_registro, notice: 'Puesto registro was successfully created.' }
+        format.html { redirect_to @puesto_registro, notice: 'Puesto creado.' }
         format.json { render :show, status: :created, location: @puesto_registro }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class PuestoRegistrosController < ApplicationController
   def update
     respond_to do |format|
       if @puesto_registro.update(puesto_registro_params)
-        format.html { redirect_to @puesto_registro, notice: 'Puesto registro was successfully updated.' }
+        format.html { redirect_to @puesto_registro, notice: 'Puesto Actualizado.' }
         format.json { render :show, status: :ok, location: @puesto_registro }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class PuestoRegistrosController < ApplicationController
   def destroy
     @puesto_registro.destroy
     respond_to do |format|
-      format.html { redirect_to puesto_registros_url, notice: 'Puesto registro was successfully destroyed.' }
+      format.html { redirect_to puesto_registros_url, notice: 'Puesto Eliminado.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +69,6 @@ class PuestoRegistrosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def puesto_registro_params
-      params.require(:puesto_registro).permit(:puestoNombre, :direccion, :turno, :horaEntrada, :horaSalida)
+      params.require(:puesto_registro).permit(:puestoNombre, :direccion, :turno, :regis_guardium_id,:horaEntrada, :horaSalida)
     end
 end
