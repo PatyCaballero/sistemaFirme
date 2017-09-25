@@ -14,11 +14,11 @@
    <div id="main-container" class="container">
       <div class="row">
       <div class="col-xs-12">
-          <div class="col-xs-3">
+          <div class="col-xs-4">
           </div>
           <div class="jumbotron">
             <div class="container">
-          <div class="col-xs-4">
+          <div class="col-xs-5">
                 <form class="form-inline">
 
                   <div class="field">
@@ -34,16 +34,23 @@
                     <%= form.text_field :turno, id: :puesto_registro_turno, class:"form-control", placeholder:"Turno" %><br><br> 
                   </div>
                         </div>
-          <div class="col-xs-3">
+          <div class="col-xs-2">
           </div>
           <div class="col-xs-4">
 
+                  Guardia
                   <div class="field">
-                    <%= form.time_select :horaEntrada, id: :puesto_registro_horaEntrada, class:"form-control", placeholder:"Hora Entrada" %><br><br><br><br> 
+                    <%= form.collection_select(:regis_guardium_id, RegisGuardium.all, :id, :nombre, :class=>"form-control input-sm") %><br><br>
                   </div>
 
+                  Hora Entrada
+                  <div class="field"> 
+                    <%= form.time_select :horaEntrada, id: :puesto_registro_horaEntrada, class:"form-control"%> <br><br> 
+                  </div>
+
+                  Hora Salida
                   <div class="field">
-                    <%= form.time_select :horaSalida, id: :puesto_registro_horaSalida, class:"form-control", placeholder:"Hora Salida" %>
+                    <%= form.time_select :horaSalida, id: :puesto_registro_horaSalida, class:"form-control" %>
                   </div>
           </div>
           <div class="col-xs-2">
@@ -52,7 +59,10 @@
           </div>
           </div>
           </div>
-      <div class="actions">
-          <%= form.submit %>
-      </div>
-      <% end %>
+
+     <div class="col-xs-3">
+        <div class="actions">
+            <%= form.submit "Guardar", :class => "button-guardar"  %>
+        </div>
+        <% end %>
+    </div>
