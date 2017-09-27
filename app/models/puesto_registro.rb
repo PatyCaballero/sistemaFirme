@@ -5,4 +5,6 @@ class PuestoRegistro < ApplicationRecord
 
 	belongs_to :cliente
 	has_many :calendario
+
+	self.per_page = 10
 end

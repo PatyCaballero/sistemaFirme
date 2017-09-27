@@ -4,4 +4,6 @@ class Cliente < ApplicationRecord
 	belongs_to :puesto_registro
 
 	has_many :presupuesto
+	self.per_page = 10
+
 end

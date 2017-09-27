@@ -3,4 +3,5 @@ class RegisGuardium < ApplicationRecord
 	has_many :puesto_registro
 	has_many :calendario
 
+	self.per_page = 10
 end
