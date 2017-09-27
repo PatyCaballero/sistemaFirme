@@ -4,7 +4,12 @@ class RegisGuardiaController < ApplicationController
   # GET /regis_guardia
   # GET /regis_guardia.json
   def index
-    @regis_guardia = RegisGuardium.all
+
+    if params[:search].nil?
+      @regis_guardia = RegisGuardium.all
+    else
+      @regis_guardia = RegisGuardium.where("nombre LIKE ?", "%#{params["search"]}%")
+    end
   end
 
   # GET /regis_guardia/1

@@ -4,9 +4,13 @@ class PuestoRegistrosController < ApplicationController
   # GET /puesto_registros
   # GET /puesto_registros.json
   def index
-    @puesto_registros = PuestoRegistro.all
+    if params[:search].nil? 
+        @puesto_registros = PuestoRegistro.all
+    else
+      @puesto_registros =  PuestoRegistro.where("puestoNombre LIKE ?", "%#{params["search"]}%")
+      #Cliente.where("cliente LIKE ? = '#{params["search"]}'")
+    end     
   end
-
   # GET /puesto_registros/1
   # GET /puesto_registros/1.json
   def show
@@ -28,7 +32,7 @@ class PuestoRegistrosController < ApplicationController
 
     respond_to do |format|
       if @puesto_registro.save
-        format.html { redirect_to @puesto_registro, notice: 'Puesto creado.' }
+        format.html { redirect_to @puesto_registro, notice: 'Se ha creado.' }
         format.json { render :show, status: :created, location: @puesto_registro }
       else
         format.html { render :new }
@@ -42,7 +46,7 @@ class PuestoRegistrosController < ApplicationController
   def update
     respond_to do |format|
       if @puesto_registro.update(puesto_registro_params)
-        format.html { redirect_to @puesto_registro, notice: 'Puesto Actualizado.' }
+        format.html { redirect_to @puesto_registro, notice: 'Se Actualizo.' }
         format.json { render :show, status: :ok, location: @puesto_registro }
       else
         format.html { render :edit }
@@ -56,7 +60,7 @@ class PuestoRegistrosController < ApplicationController
   def destroy
     @puesto_registro.destroy
     respond_to do |format|
-      format.html { redirect_to puesto_registros_url, notice: 'Puesto Eliminado.' }
+      format.html { redirect_to puesto_registros_url, notice: 'Se ha Eliminado.' }
       format.json { head :no_content }
     end
   end

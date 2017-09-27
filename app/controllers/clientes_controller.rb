@@ -4,8 +4,22 @@ class ClientesController < ApplicationController
   # GET /clientes
   # GET /clientes.json
   def index
-    @clientes = Cliente.all
+    if params[:search].nil? 
+      @clientes = Cliente.all
+    else
+      @clientes =  Cliente.where("cliente LIKE ?", "%#{params["search"]}%")
+      #Cliente.where("cliente LIKE ? = '#{params["search"]}'")
+
+      
+    end
+    
+
+    #@clientes =  Cliente.paginate(:page => params[:page])
+
+   # Cliente.order(sort_column + '' + sort_direction).paginate(:per_page => 5, params[:page])
   end
+#@products = Product.search(params[:search]).order(sort_column + ' ' + sort_direction).paginate(:per_page => 5, :page => params[:page])
+#end
 
   # GET /clientes/1
   # GET /clientes/1.json
@@ -28,7 +42,7 @@ class ClientesController < ApplicationController
 
     respond_to do |format|
       if @cliente.save
-        format.html { redirect_to @cliente, notice: 'Cliente was successfully created.' }
+        format.html { redirect_to @cliente, notice: 'Se ha Creado.' }
         format.json { render :show, status: :created, location: @cliente }
       else
         format.html { render :new }
@@ -42,7 +56,7 @@ class ClientesController < ApplicationController
   def update
     respond_to do |format|
       if @cliente.update(cliente_params)
-        format.html { redirect_to @cliente, notice: 'Cliente was successfully updated.' }
+        format.html { redirect_to @cliente, notice: 'Se Actualizo.' }
         format.json { render :show, status: :ok, location: @cliente }
       else
         format.html { render :edit }
@@ -56,7 +70,7 @@ class ClientesController < ApplicationController
   def destroy
     @cliente.destroy
     respond_to do |format|
-      format.html { redirect_to clientes_url, notice: 'Cliente was successfully destroyed.' }
+      format.html { redirect_to clientes_url, notice: 'Se ha Eliminado.' }
       format.json { head :no_content }
     end
   end
