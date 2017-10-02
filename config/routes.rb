@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  
+  resources :stock
+  resources :puestos
+  resources :clientes
+  resources :asignar_puestos
+  resources :registro_clientes
   resources :reportes
   resources :presupuesto_creates
   resources :crea_presupuestos
@@ -6,13 +12,10 @@ Rails.application.routes.draw do
   resources :regis_guardia
   resources :puesto_registros
   resources :guardia_registros
-  resources :clientes
   resources :presupuestos
   resources :lista_calendarios
   resources :calendarios
   resources :registro_puestos
-  resources :registro_guardia
-  resources :guardia
 
   get 'regis_guardia/index'
   get 'regis_guardia/show'
