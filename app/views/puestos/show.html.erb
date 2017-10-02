@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+<div id="main-container" class="container">
+      <div class="row"><br><br>
+      <div class="col-xs-12">
+          <div class="col-xs-6">
+          </div>
+
+          <div class="col-xs-6">
+				<%= link_to edit_puesto_path(@puesto), class: "btn btn-info" do %><i class="glyphicon glyphicon-pencil"></i> Editar <% end %> |
+				<%= link_to puestos_path, class: "btn btn-default"  do %><i class="glyphicon glyphicon-arrow-left"></i> Atras <% end %>         		
+
+          </div>
+          <br><br><br><br>
+          <div class="col-xs-10">
+            <table class="table table-striped">
+
+					<td><p>
+					  <strong>Direccion:</strong>
+					  <%= @puesto.direccion %>
+					</p></td>
+
+					<td><p>
+					  <strong>Turno:</strong>
+					  <%= @puesto.turno %>
+					</p></td>
+
+					<td><p>
+					  <strong>Hora entrada:</strong>
+					  <%= @puesto.hora_entrada %>
+					</p></td>
+
+					<td><p>
+					  <strong>Hora salida:</strong>
+					  <%= @puesto.hora_salida %>
+					</p></td>
+				</tr>
+              </tbody>
+            </table>          
+          </div>
+      </div>
+    </div>
+  </div>
+
