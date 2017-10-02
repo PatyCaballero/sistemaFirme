@@ -2,7 +2,8 @@
       <div class="row">
       <div class="col-xs-12">
 	        <div class="col-xs-3">
-				<h1>Editing Cliente</h1>
+				<h2>Editar Cliente</h2><br><br><br>
+
 			</div>
 			<div class="col-xs-6">
 			</div>
@@ -12,9 +13,10 @@
 				<%= link_to clientes_path, class: "btn btn-default"  do %><i class="glyphicon glyphicon-arrow-left"></i> Atras <% end %> 
 			</div>
 
-				<%= render 'form', cliente: @cliente, class: "btn btn-info" do %>
+			<%= render 'form', cliente: @cliente, class: "btn btn-info" do %>
 				<% end %>
 
 			</div>
 	</div>
 </div>
+

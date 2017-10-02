@@ -6,34 +6,33 @@
           </div>
 
           <div class="col-xs-6">
-              <%= link_to edit_cliente_path(@cliente), class: "btn btn-info" do %><i class="glyphicon glyphicon-pencil"></i> Editar <% end %> |
-              <%= link_to clientes_path class: "btn btn-default"  do %><i class="glyphicon glyphicon-arrow-left"></i> Atras <% end %>
+                   <%= link_to edit_cliente_path(@cliente), class: "btn btn-info" do %><i class="glyphicon glyphicon-pencil"></i> Editar <% end %> |
+                    <%= link_to clientes_path class: "btn btn-default"  do %><i class="glyphicon glyphicon-arrow-left"></i> Atras <% end %>
+
           </div>
           <br><br><br><br>
           <div class="col-xs-10">
             <table class="table table-striped">
-
               <tbody>
                 <tr>
-
                   <td><p>
-                    <strong>Cliente:</strong>
-                    <%= @cliente.cliente %>
+                    <strong>Nombre:</strong>
+                    <%= @cliente.nombre %>
                   </p></td>
 
                   <td><p>
-                    <strong>Numruc:</strong>
-                    <%= @cliente.numRuc %>
-                  </p></td>
-
-                  <td><p>
-                    <strong>Direccion:</strong>
-                    <%= @cliente.direccion %>
+                    <strong>Num ruc:</strong>
+                    <%= @cliente.num_ruc %>
                   </p></td>
 
                   <td><p>
                     <strong>Telefono:</strong>
                     <%= @cliente.telefono %>
+                  </p></td>
+
+                  <td><p>
+                    <strong>Direccion:</strong>
+                    <%= @cliente.direccion %>
                   </p></td>
 
                   <td><p>
@@ -48,4 +47,3 @@
       </div>
     </div>
   </div>
-
