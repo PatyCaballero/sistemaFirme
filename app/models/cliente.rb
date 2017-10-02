@@ -1,9 +1,9 @@
 class Cliente < ApplicationRecord
-	validates :cliente, :numRuc, :direccion, :telefono, :estado, presence: true
 
-	belongs_to :puesto_registro
+	validates :nombre, :num_ruc, :telefono, :direccion, :estado, presence: true
 
-	has_many :presupuesto
+	has_many :puesto
+
+	#paginacion
 	self.per_page = 10
-
 end
