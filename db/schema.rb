@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170909024124) do
+ActiveRecord::Schema.define(version: 20171005125001) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "asignar_puestos", force: :cascade do |t|
+    t.integer "asignarId"
+    t.string "puesto"
+    t.string "direccion"
+    t.string "turno"
+    t.time "horaEntrada"
+    t.time "horaSalida"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "calendarios", force: :cascade do |t|
     t.string "diasTrabajados"
@@ -22,11 +33,18 @@ ActiveRecord::Schema.define(version: 20170909024124) do
   end
 
   create_table "clientes", force: :cascade do |t|
-    t.string "cliente"
-    t.integer "numRuc"
+    t.string "nombre"
+    t.string "num_ruc"
+    t.string "telefono"
     t.string "direccion"
-    t.integer "telefono"
-    t.string "estado"
+    t.boolean "estado"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "control_stock", force: :cascade do |t|
+    t.date "fecha"
+    t.integer "cant_x_puesto"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -48,14 +66,16 @@ ActiveRecord::Schema.define(version: 20170909024124) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "puesto_registros", force: :cascade do |t|
-    t.string "puestoNombre"
+  create_table "puestos", force: :cascade do |t|
     t.string "direccion"
     t.string "turno"
-    t.time "horaEntrada"
-    t.time "horaSalida"
+    t.time "hora_entrada"
+    t.time "hora_salida"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "cliente_id"
+    t.integer "regis_guardium_id"
+    t.boolean "estado"
   end
 
   create_table "regis_guardia", force: :cascade do |t|
@@ -67,6 +87,7 @@ ActiveRecord::Schema.define(version: 20170909024124) do
     t.string "fechaNacimiento"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "estado"
   end
 
   create_table "reportes", force: :cascade do |t|
@@ -78,4 +99,14 @@ ActiveRecord::Schema.define(version: 20170909024124) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "stock", force: :cascade do |t|
+    t.string "producto"
+    t.integer "cantidad"
+    t.string "descripcion"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "puestos", "clientes"
+  add_foreign_key "puestos", "regis_guardia"
 end
