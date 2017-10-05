@@ -40,8 +40,8 @@
                       <tbody>
                         <% @puestos.each do |puesto| %>
                           <tr>
-                          <td><%= puesto.cliente_id %></td> <!--(@cliente.nombre) -->
-                          <td><%= puesto.regis_guardium_id %></td>  <!-- (@regis_guardium.nombre) --> 
+                          <td><%= puesto.cliente.nombre %></td> 
+                          <td><%= puesto.regis_guardium.nombre %></td>  
                             <td><%= puesto.direccion %></td>
                             <td><%= puesto.turno %></td>
                             <td><%= puesto.hora_entrada %></td>
@@ -72,14 +72,14 @@
           <div class="col-xs-3">
 
                     <%= link_to new_puesto_path, class: 'btn btn-success' do %>
-                    <i class="glyphicon glyphicon-user"></i> Nueva Asignacion
+                    <i class="glyphicon glyphicon-calendar"></i> Nueva Asignacion
                      <% end %>
           </div>
 
           <div class="col-xs-5">
           </div>
           
-          <div class="col-xs-3">
+         <!-- <div class="col-xs-3">
               <nav aria-label="...">
                   <ul class="pager">
                       <li><a href="">Anterior</a></li>
@@ -87,7 +87,7 @@
                   </ul>
               </nav>
           </div>
-          
+          -->
           
 
 </div> 
