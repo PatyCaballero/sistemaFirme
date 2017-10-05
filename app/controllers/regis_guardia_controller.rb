@@ -33,7 +33,7 @@ class RegisGuardiaController < ApplicationController
 
     respond_to do |format|
       if @regis_guardium.save
-        format.html { redirect_to @regis_guardium, notice: 'Se ha creado.' }
+        format.html { redirect_to @regis_guardium, notice: 'Guardia Creado.' }
         format.json { render :show, status: :created, location: @regis_guardium }
       else
         format.html { render :new }
@@ -47,7 +47,7 @@ class RegisGuardiaController < ApplicationController
   def update
     respond_to do |format|
       if @regis_guardium.update(regis_guardium_params)
-        format.html { redirect_to @regis_guardium, notice: 'Se actualizo.' }
+        format.html { redirect_to @regis_guardium, notice: 'Guardia Actualizado.' }
         format.json { render :show, status: :ok, location: @regis_guardium }
       else
         format.html { render :edit }
@@ -61,7 +61,7 @@ class RegisGuardiaController < ApplicationController
   def destroy
     @regis_guardium.destroy
     respond_to do |format|
-      format.html { redirect_to regis_guardia_url, notice: 'Se ha Eliminado.' }
+      format.html { redirect_to regis_guardia_url, notice: 'Guardia Eliminado.' }
       format.json { head :no_content }
     end
   end
@@ -74,6 +74,6 @@ class RegisGuardiaController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def regis_guardium_params
-      params.require(:regis_guardium).permit(:nombre, :apellido, :numDocumento, :direccion, :telefono, :fechaNacimiento)
+      params.require(:regis_guardium).permit(:nombre, :apellido, :numDocumento, :direccion, :telefono, :fechaNacimiento, :estado)
     end
 end
