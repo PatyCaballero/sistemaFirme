@@ -9,7 +9,8 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+#gem 'sqlite3'
+gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -36,8 +37,12 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'jquery-rails'
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'twitter-bootstrap-rails', '~> 4.0'
 
+#gem 'will-paginate', '~> 5.1.1'
+gem 'will_paginate', '~> 3.1', '>= 3.1.6'
  ##gem 'twitter-bootstrap-rails'
+#gem 'fullcalendar-rails', '~> 3.4'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
