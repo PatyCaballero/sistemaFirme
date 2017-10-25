@@ -7,7 +7,9 @@ class RegisGuardiaController < ApplicationController
 
     if params[:search].nil?
       @regis_guardia = RegisGuardium.all
+      #@regis_guardia = RegisGuardium.where ("estado = False")
     else
+
       @regis_guardia = RegisGuardium.where("nombre LIKE ?", "%#{params["search"]}%")
     end
   end
@@ -20,6 +22,7 @@ class RegisGuardiaController < ApplicationController
   # GET /regis_guardia/new
   def new
     @regis_guardium = RegisGuardium.new
+    #@regis_guardium = @puesto.regis_guardium.build
   end
 
   # GET /regis_guardia/1/edit
@@ -29,6 +32,8 @@ class RegisGuardiaController < ApplicationController
   # POST /regis_guardia
   # POST /regis_guardia.json
   def create
+          #puts "************************"
+      #puts params.inspect
     @regis_guardium = RegisGuardium.new(regis_guardium_params)
 
     respond_to do |format|
@@ -74,6 +79,7 @@ class RegisGuardiaController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def regis_guardium_params
-      params.require(:regis_guardium).permit(:nombre, :apellido, :numDocumento, :direccion, :telefono, :fechaNacimiento, :estado)
+      params.require(:regis_guardium).permit(:nombre, :apellido, :numDocumento, :direccion, :telefono, :fechaNacimiento, :estado, :nacionalidad, :estadoCivil, :edad, :grupoSanguineo, :estudios, 
+        :nombrePadre, :nombreMadre, :direccionAlternativa, :telUrgencia, :fechaIngreso, :sueldoInicial, :observacion)
     end
 end
