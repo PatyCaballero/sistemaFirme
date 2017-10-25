@@ -1,0 +1,2 @@
+class ControlStock < ApplicationRecord
+end

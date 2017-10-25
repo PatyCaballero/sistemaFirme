@@ -1,6 +1,6 @@
 class Cliente < ApplicationRecord
 
-	validates :nombre, :num_ruc, :telefono, :direccion, :estado, presence: true
+	#validates :nombre, :num_ruc, :telefono, :direccion, presence: true
 
 	has_many :puestos
 
