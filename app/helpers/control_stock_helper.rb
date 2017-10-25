@@ -1,0 +1,2 @@
+module ControlStockHelper
+end
