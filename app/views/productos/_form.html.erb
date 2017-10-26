@@ -11,6 +11,12 @@
     </div>
   <% end %>
 
+
+<div class="field">
+      <%= form.label "Categoria" %>
+      <%= form.collection_select(:categoria_id, Categoria.all, :id, :nombre) %>
+</div><br><br>
+
   <div class="field">
     <%= form.label :nomProducto %>
     <%= form.text_field :nomProducto, id: :producto_nomProducto %>
