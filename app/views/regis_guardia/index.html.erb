@@ -17,13 +17,7 @@
             <% end %>
         </div>
 
-          <div class="col-xs-12">
-            <div class="jumbotron">
-              <div class="container">
-              <div class="row">
-                <div class="col-xs-1">
-                </div>
-                <div class="col-xs-3">
+    
                     <table class="table table-hover">
                         <thead>
                             <tr>
@@ -32,7 +26,19 @@
                               <th>Nº C.I</th>
                               <th>Direccion</th>
                               <th>Telefono</th>
-                              <th>FechaNacimiento</th>
+                              <th>Fecha Nacimiento</th>
+                              <th>Edad</th>
+                              <th>Nacionalidad</th>
+                              <!--<th>Estado Civil</th>
+                              <th>Grupo Sanguineo</th>
+                              <th>Estudios</th>
+                              <th>Nombre del Padre</th>
+                              <th>Nombre de la Madre</th>
+                              <th>Direccion Alternativa</th>
+                              <th>Tel. Urgencia</th>
+                              <th>Fecha Ingreso</th>
+                              <th>Sueldo Inicial</th>
+                              <th>Observacion</th>-->
                               <th>Estado</th>
                               <th colspan="3"></th></b>
                             </tr>
@@ -47,10 +53,22 @@
                                   <td><%= regis_guardium.direccion %></td>
                                   <td><%= regis_guardium.telefono %></td>
                                   <td><%= regis_guardium.fechaNacimiento %></td>
+                                  <td><%= regis_guardium.edad %></td>
+                                  <td><%= regis_guardium.nacionalidad %></td>
+                                 <!-- <td><%= regis_guardium.estadoCivil %></td>
+                                  <td><%= regis_guardium.grupoSanguineo %></td>
+                                  <td><%= regis_guardium.estudios %></td>
+                                  <td><%= regis_guardium.nombrePadre %></td>
+                                  <td><%= regis_guardium.nombreMadre %></td>
+                                  <td><%= regis_guardium.direccionAlternativa %></td>
+                                  <td><%= regis_guardium.telUrgencia %></td>
+                                  <td><%= regis_guardium.fechaIngreso %></td>
+                                  <td><%= regis_guardium.sueldoInicial %></td>
+                                  <td><%= regis_guardium.observacion %></td> -->
                                   <td><%= regis_guardium.estado %></td>
 
                                   <td><%= link_to regis_guardium, class: 'btn btn-info' do %>
-                                    <i class="glyphicon glyphicon-eye-open"></i> Ver
+                                    <i class="glyphicon glyphicon-eye-open"></i> Ver Más
                                     <% end %> </td>
 
                                   <td><%= link_to edit_regis_guardium_path(regis_guardium), class: 'btn btn-info' do %>
@@ -66,11 +84,8 @@
                             </tbody>
                       </table>
                     </div>
-
                   </div>
-              </div>
             </div>
-          </div>
 
           <div class="col-xs-3">
             <%= link_to new_regis_guardium_path, class: 'btn btn-success' do %>

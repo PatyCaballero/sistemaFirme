@@ -14,48 +14,139 @@
   <div id="main-container" class="container">
       <div class="row">
       <div class="col-xs-12">
-          <div class="col-xs-3">
-          </div>
-          <div class="jumbotron">
-            <div class="container">
-          <div class="col-xs-4">
+         
+          
+                  <b>
                 <form class="form-inline">
-                  <div class="field">
-                   <%= form.text_field :nombre, id: :regis_guardium_nombre, class: "form-control", placeholder: "Nombre" %><br><br>
-                  </div>
 
-                  <div class="field">
-                    <%= form.text_field :apellido, id: :regis_guardium_apellido, class: "form-control", placeholder:"Apellido" %><br><br>
-                    
-                  </div>
+                <div class="panel panel-info">
+                  <div class="panel-heading">Datos Principales</div>
+                  <div class="panel-body">
+          
+                      <div class="col-xs-6">
+                          <div class="field">
+                           <%= form.text_field :nombre, id: :regis_guardium_nombre, class: "form-control", placeholder: "Nombre" %>
+                          </div>
+                      </div>
 
-                  <div class="field">
-                      <%= form.number_field :numDocumento, id: :regis_guardium_numDocumento, class:"form-control", placeholder:"C.I" %><br><br>
+                       <div class="col-xs-6">
+                          <div class="field">
+                            <%= form.text_field :apellido, id: :regis_guardium_apellido, class: "form-control", placeholder:"Apellido" %><br><br>
+                            
+                          </div>
+                        </div>
+
+                        <div class="col-xs-3">
+                            <div class="field">
+                                <%= form.number_field :numDocumento, id: :regis_guardium_numDocumento, class:"form-control", placeholder:"C.I" %><br><br>
+                              </div>
+                          </div>
+
+                        <div class="col-xs-6">
+                            <div class="field">
+                                  <%= form.text_field :direccion, id: :regis_guardium_direccion, class: "form-control", placeholder:"Direccion" %><br><br>
+                              </div>
+                          </div>
+
+                          <div class="col-xs-3">
+                              <div class="field">
+                                <%= form.number_field :telefono, id: :regis_guardium_telefono,  class: "form-control", placeholder:"Nº Telefono" %><br><br>
+                              </div>
+                          </div>
+
+                          <div class="col-xs-3">
+                              <div class="field">
+                                    <%= form.text_field :fechaNacimiento, id: :regis_guardium_fechaNacimiento, class: "form-control", placeholder:"Fecha Nacimiento" %><br><br>
+                              </div>
+                          </div>
+
+                          <div class="col-xs-3">
+                            <div class="field">
+                              <%= form.number_field :edad, id: :regis_guardium_edad, class:"form-control", placeholder:"Edad" %><br><br>
+                            </div>
+                          </div>
+
+                           <div class="col-xs-3">
+                                <div class="field">
+                                <%= form.text_field :nacionalidad, id: :regis_guardium_nacionalidad, class:"form-control", placeholder:"Nacionalidad" %><br><br>
+                                </div>
+                          </div>
+
+
+                           <div class="col-xs-3">
+                              <div class="field">
+                                <%= form.text_field :estadoCivil, id: :regis_guardium_estadoCivil, class:"form-control", placeholder:"Estado Civil" %><br><br>
+                              </div>
+                            </div>
+
+                             <div class="col-xs-4">
+                                <div class="field">
+                                <%= form.text_field :grupoSanguineo, id: :regis_guardium_grupoSanguineo, class:"form-control", placeholder:"Grupo Sanguineo" %><br><br>
+                                </div>
+                            </div>
+
+                             <div class="col-xs-6">
+                                 <div class="field">
+                                  <%= form.text_field :estudios, id: :regis_guardium_estudios, class:"form-control", placeholder:"Estudios Cursados" %><br><br>
+                                  </div>
+                              </div>
+                      </div>
                     </div>
-                  
+                  <div class="panel panel-info">
+                  <div class="panel-heading">Otros Datos</div>
+                  <div class="panel-body">
+                      <div class="col-xs-6">
+                        <div class="field">
+                            <%= form.text_field :nombrePadre, id: :regis_guardium_nombrePadre, class:"form-control", placeholder:"Nombre del Padre" %><br><br>
+                        </div>
+                      </div>
+
+                        <div class="col-xs-6">
+                           <div class="field">
+                            <%= form.text_field :nombreMadre, id: :regis_guardium_nombreMadre, class:"form-control", placeholder:"Nombre de la Madre" %><br><br>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-6">
+                           <div class="field">
+                            <%= form.text_field :direccionAlternativa, id: :regis_guardium_direccionAlternativa, class:"form-control", placeholder:"Direccion Alternativa" %><br><br>
+                          </div>
+                        </div>
+
+                        <div class="col-xs-6">
+                           <div class="field">
+                            <%= form.text_field :telUrgencia, id: :regis_guardium_telUrgencia, class:"form-control", placeholder:"Tel de Urgencia" %><br><br>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-3">
+                           <div class="field">
+                            <%= form.text_field :fechaIngreso, id: :regis_guardium_fechaIngreso, class:"form-control", placeholder:"Fecha de Ingreso" %><br><br>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-3">
+                           <div class="field">
+                            <%= form.text_field :sueldoInicial, id: :regis_guardium_sueldoInicial, class:"form-control", placeholder:"Sueldo Inicial" %><br><br>
+                          </div>
+                        </div>
+
+                        <div class="col-xs-6">
+                           <div class="field">
+                            <%= form.text_field :observacion, id: :regis_guardium_observacion, class:"form-control", placeholder:"Observacion" %><br><br>
+                            </div>
+                        </div>
+                  </div>
+                </div>
+
           </div>
-          <div class="col-xs-3">
-          </div>
+          
           <div class="col-xs-4">
-              
-                
-                    <div class="field">
-                        <%= form.text_field :direccion, id: :regis_guardium_direccion, class: "form-control", placeholder:"Direccion" %><br><br>
-                    </div>
-
-                    <div class="field">
-                      <%= form.number_field :telefono, id: :regis_guardium_telefono,  class: "form-control", placeholder:"Nº Telefono" %><br><br>
-                  </div>
-
-
-                    <div class="field">
-                          <%= form.text_field :fechaNacimiento, id: :regis_guardium_fechaNacimiento, class: "form-control", placeholder:"Fecha Nacimiento" %><br><br>
-                    </div>
 
                     <div class="field">
                           <%= form.label "Estado" %>
                           <%= form.check_box :estado, id: :regis_guardium_estado %>
-                        </div>
+                    </div>
           </div>
 
 
