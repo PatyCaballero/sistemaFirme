@@ -1,3 +1,3 @@
 class Producto < ApplicationRecord
-	has_many :stock
+	belongs_to :categoria
 end
