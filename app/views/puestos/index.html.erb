@@ -33,6 +33,7 @@
                           <th>Turno</th>
                           <th>Hora Entrada</th>
                           <th>Hora Salida</th>
+                          <th>Estado</th>
                           <th colspan="3"></th>
                         </tr>
                       </thead>
@@ -40,12 +41,13 @@
                       <tbody>
                         <% @puestos.each do |puesto| %>
                           <tr>
-                          <td><%= puesto.cliente.nombre %></td> 
-                          <td><%= puesto.regis_guardium.nombre %></td>  
+                            <td><%= puesto.cliente.nombre %></td> 
+                            <td><%= puesto.regis_guardium.nombre %></td>
                             <td><%= puesto.direccion %></td>
                             <td><%= puesto.turno %></td>
                             <td><%= puesto.hora_entrada %></td>
                             <td><%= puesto.hora_salida %></td>
+                            <td><%= puesto.estado %></td>
 
                             <td><%= link_to puesto , class: 'btn btn-info' do %>
                                 <i class="glyphicon glyphicon-eye-open"></i> Ver <% end %> 

@@ -25,10 +25,14 @@
                         <%= form.collection_select(:cliente_id, Cliente.all, :id, :nombre) %>
                       </div><br><br>
 
+                    
                       <div class="field">
-                        <%= form.label "Guardia" %>
-                        <%= form.collection_select(:regis_guardium_id, RegisGuardium.all, :id, :nombre) %>
+                        <%= form.label "Guardias Disponibles" %>
+                        <%= form.collection_select(:regis_guardium_id, RegisGuardium.where(estado: "false"), :id, :nombre) %>
+
                       </div><br><br>
+
+                      
 
                       <div class="field">
                         <%= form.text_field :direccion, id: :puesto_direccion, class: "form-control", placeholder:"Direccion" %><br><br>
@@ -53,6 +57,10 @@
                       </div>
           </div>
           <div class="col-xs-2">
+              <div class="field">
+                          <%= form.label "Estado" %>
+                          <%= form.check_box :estado, id: :puesto_estado %>
+                    </div>
           </div>
           <div class="col-xs-3">
           </div>
