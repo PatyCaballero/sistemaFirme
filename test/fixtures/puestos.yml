@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  direccion: MyString
+  turno: MyString
+  hora_entrada: 2017-09-29 18:58:16
+  hora_salida: 2017-09-29 18:58:16
+
+two:
+  direccion: MyString
+  turno: MyString
+  hora_entrada: 2017-09-29 18:58:16
+  hora_salida: 2017-09-29 18:58:16

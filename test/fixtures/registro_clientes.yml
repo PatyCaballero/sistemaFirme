@@ -1,15 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   nombre: MyString
-  num_ruc: MyString
-  telefono: MyString
+  numRuc: 1
   direccion: MyString
-  estado: false
+  telefono: 1
+  estado: MyString
 
 two:
+  id: 1
   nombre: MyString
-  num_ruc: MyString
-  telefono: MyString
+  numRuc: 1
   direccion: MyString
-  estado: false
+  telefono: 1
+  estado: MyString
