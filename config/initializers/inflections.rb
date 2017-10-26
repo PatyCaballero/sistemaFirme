@@ -12,6 +12,7 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
 #inflect.irregular 'puesto', 'puestos'
 #inflect.irregular 'guardia', 'guardias'
 	inflect.irregular 'stocks', 'stock'
+	inflect.irregular 'controlStock', 'controlStock'
  end
 
 # These inflection rules are supported but not enabled by default:
