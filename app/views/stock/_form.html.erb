@@ -10,23 +10,39 @@
       </ul>
     </div>
   <% end %>
+<div id="main-container" class="container">
+      <div class="row">
+      <div class="col-xs-6">
+          <div class="col-xs-1">
+          </div>
+          <div class="jumbotron">
+            <div class="container">
+          <div class="col-xs-5">
+                <form class="form-inline">
+                      <div class="field">
+                        <%= form.label "Producto" %>
+                        <%= form.collection_select(:producto_id, Producto.all, :id, :nomProducto) %>
+                      </div><br><br>
+                     
+                     
 
-  <div class="field">
-    <%= form.label :producto %>
-    <%= form.text_field :producto, id: :stocks_producto %>
-  </div>
+                      <div class="field">
+                          <%= form.number_field :cantidad, id: :stocks_cantidad, class:"form-control", placeholder:"Cantidad" %><br><br>
+                      </div>
 
-  <div class="field">
-    <%= form.label :cantidad %>
-    <%= form.number_field :cantidad, id: :stocks_cantidad %>
-  </div>
+                      <div class="field">
+                          <%= form.text_field :descripcion, id: :stocks_descripcion, class:"form-control", placeholder:"Observacion" %><br><br>
+                      </div>
+          </div>
+          <div class="col-xs-1">
+          </div>
+        </div>
+        </div>
+        <div class="col-xs-3">
+                      <div class="actions">
+                        <%= form.submit "Guardar" %>
+                      </div>
+                    <% end %>
+        </div>
 
-  <div class="field">
-    <%= form.label :descripcion %>
-    <%= form.text_field :descripcion, id: :stocks_descripcion %>
-  </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>

@@ -1,5 +1,18 @@
-<h1>New Stocks</h1>
+<div id="main-container" class="container">
+      <div class="row">
+      <div class="col-xs-8">
+	        <div class="col-xs-3">
+				<h2>Nuevo Registro</h2><br><br><br>
+			</div>
+		</div>
 
-<%= render 'form', stocks: @stocks %>
-
-<%= link_to 'Back', stock_path %>
+			<%= render 'form', stocks: @stocks %>
+		
+		<div class="col-xs-5">
+        </div>
+        <div class="col-xs-4">
+				<%= link_to stock_path, class: "btn btn-default"  do %><i class="glyphicon glyphicon-arrow-left"></i> Atras <% end %>
+				
+		</div>
+		</div>
+</div>

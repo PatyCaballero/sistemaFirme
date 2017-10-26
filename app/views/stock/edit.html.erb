@@ -1,6 +1,21 @@
-<h1>Editing Stocks</h1>
+<div id="main-container" class="container">
+      <div class="row">
+      <div class="col-xs-12">
+	        <div class="col-xs-3">
+				<h2>Editar Stock</h2>
+			</div>
 
-<%= render 'form', stocks: @stocks %>
+			<div class="col-xs-6">
+			</div>
 
-<%= link_to 'Show', @stocks %> |
-<%= link_to 'Back', stock_path %>
+			<div class="col-xs-3">
+				<%= link_to @stocks, class: "btn btn-info" do %> <i class="glyphicon glyphicon-eye-open"></i>  Ver <% end %>|
+				<%= link_to stock_path, class: "btn btn-default"  do %><i class="glyphicon glyphicon-arrow-left"></i> Atras <% end %> 
+			</div>
+
+			<%= render 'form', stocks: @stocks, class: "btn btn-info" do %>
+				<% end %>
+
+			</div>
+	</div>
+</div>

@@ -1,31 +1,80 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Stock</h1>
+<div id="main-container" class="container">
+      <div class="row">
+      <div class="col-xs-12">
+        <div class="col-xs-3">
+            <h2>Stock</h2><br><br><br>
+        </div>
+      
+        <div class="col-xs-5">        
+        </div>
+        <div class="col-xs-4">
+            <%= link_to new_control_stocks_path, class: 'btn btn-primary' do %>
+            <i class="glyphicon glyphicon-list-alt"></i> Control de Stock
+             <% end %>
+        </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Producto</th>
-      <th>Cantidad</th>
-      <th>Descripcion</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+      <div class="col-xs-12">
+            <div class="jumbotron">
+              <div class="container">
+              <div class="row">
+                <div class="col-xs-1">
+                </div>
+                <div class="col-xs-3">
+                    <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th>Producto</th>
+                            <th>Cantidad</th>
+                            <th>Observacion</th>
+                            <th>Stock</th>
+                            <th colspan="3"></th>
+                          </tr>
+                        </thead>
 
-  <tbody>
-    <% @stock.each do |stocks| %>
-      <tr>
-        <td><%= stocks.producto %></td>
-        <td><%= stocks.cantidad %></td>
-        <td><%= stocks.descripcion %></td>
-        <td><%= link_to 'Show', stocks %></td>
-        <td><%= link_to 'Edit', edit_stocks_path(stocks) %></td>
-        <td><%= link_to 'Destroy', stocks, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+                        <tbody>
+                          <% @stocks.each do |stock| %>
+                            <tr>
+                              <td><%= stock.producto.nomProducto %></td>
+                              <td><%= stock.cantidad %></td>
+                              <td><%= stock.descripcion %></td>
 
-<br>
 
-<%= link_to 'New Stocks', new_stocks_path %>
+                              <td><%= link_to stock, class: 'btn btn-info' do %>
+                                  <i class="glyphicon glyphicon-eye-open"></i> Ver <% end %> 
+                              </td>
+
+                              <td><%= link_to edit_stocks_path(stock), class: 'btn btn-info' do %>
+                                  <i class="glyphicon glyphicon-edit"></i> Editar <% end %>
+                              </td>
+
+
+                              <td><%= link_to stock, method: :delete, data: { confirm: 'Estas seguro de Eliminar?'}, class: 'btn btn-primary' do %>
+                                      <i class="glyphicon glyphicon-trash"></i> Eliminar <% end %>
+                              </td>
+                            </tr>
+                          <% end %>
+                        </tbody>
+                  </table>
+              </div>
+
+                  </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-3">
+
+            <%= link_to new_stocks_path, class: 'btn btn-success' do %>
+            <i class="glyphicon glyphicon-shopping-cart"></i> Nuevo Registro
+             <% end %>
+          </div>
+
+          <div class="col-xs-5">
+          </div>       
+</div> 
+
+</div>
+</div>
+</div>
