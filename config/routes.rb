@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :productos
+  resources :control_stock
   resources :stock
   resources :puestos
   resources :clientes
@@ -21,4 +23,6 @@ Rails.application.routes.draw do
   get 'regis_guardia/show'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'regis_guardia#index'
+
+  post 'stock/incStock'
 end
