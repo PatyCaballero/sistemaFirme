@@ -32,18 +32,25 @@
 
                       </div><br><br>
 
-                      
+                      <div class="field">
+                        <%= form.label "Equipamientos" %>
+                        <%= form.collection_select(:producto_id, Producto.all, :id, :nomProducto) %>
+                      </div><br><br>
 
                       <div class="field">
-                        <%= form.text_field :direccion, id: :puesto_direccion, class: "form-control", placeholder:"Direccion" %><br><br>
+                        
+                        <%= form.number_field :cantidad, id: :puesto_cantidad, class: "form-control", placeholder:"Cantidad" %><br><br>
                       </div>
 
+                      
           </div>
           <div class="col-xs-3">
           </div>
           <div class="col-xs-4">
+                      
                       <div class="field">
-                        <%= form.text_field :turno, id: :puesto_turno, class: "form-control", placeholder:"Turno" %><br><br>
+                        <%= form.label "Fecha Inicio" %>
+                        <%= form.date_field :fechaInicio, id: :puesto_fechaInicio, class: "form-control", placeholder:"Fecha Inicio" %><br><br>
                       </div>
 
                       <div class="field">
@@ -55,10 +62,16 @@
                           <%= form.label "Hora Salida " %>
                          <%= form.time_select :hora_salida, id: :puesto_hora_salida, class: "form-control" %><br><br>
                       </div>
+
+                      <div class="field">
+                        <%= form.label "Fecha Fin" %>
+                        <%= form.date_field :fechaFin, id: :puesto_fechaFin, class: "form-control", placeholder:"Fecha Fin" %><br><br>
+                      </div>
+
           </div>
           <div class="col-xs-2">
               <div class="field">
-                          <%= form.label "Estado" %>
+                          <%= form.label "Dejar Puesto" %>
                           <%= form.check_box :estado, id: :puesto_estado %>
                     </div>
           </div>

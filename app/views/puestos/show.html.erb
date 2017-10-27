@@ -19,16 +19,25 @@
 					  <%= @puesto.cliente.nombre %>
 					</p></td>
 
-					
-
 					<td><p>
-					  <strong>Direccion:</strong>
-					  <%= @puesto.direccion %>
+					  <strong>Guardia:</strong>
+					  <%= @puesto.regis_guardium.nombre %>
 					</p></td>
 
 					<td><p>
-					  <strong>Turno:</strong>
-					  <%= @puesto.turno %>
+					  <strong>Armamentos:</strong>
+					  <%= @puesto.producto.nomProducto %>
+					</p></td>
+					
+
+					<td><p>
+					  <strong>Cantidad:</strong>
+					  <%= @puesto.cantidad %>
+					</p></td>
+
+					<td><p>
+					  <strong>Fecha Inicio:</strong>
+					  <%= @puesto.fechaInicio %>
 					</p></td>
 
 					<td><p>
@@ -39,6 +48,11 @@
 					<td><p>
 					  <strong>Hora salida:</strong>
 					  <%= @puesto.hora_salida %>
+					</p></td>
+
+					<td><p>
+					  <strong>Fecha Fin:</strong>
+					  <%= @puesto.fechaFin %>
 					</p></td>
 				</tr>
               </tbody>
