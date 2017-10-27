@@ -11,23 +11,54 @@
     </div>
   <% end %>
 
+<div id="main-container" class="container">
+      <div class="row">
+      <div class="col-xs-12">
+          <div class="col-xs-3">
+          </div>
+          <div class="jumbotron">
+            <div class="container">
+          <div class="col-xs-4">
+              <form class="form-inline">
 
-<div class="field">
-      <%= form.label "Categoria" %>
-      <%= form.collection_select(:categoria_id, Categoria.all, :id, :nombre) %>
-</div><br><br>
+              <div class="field">
+                    <%= form.label "Categoria" %>
+                    <%= form.collection_select(:categoria_id, Categoria.all, :id, :nombre) %>
+              </div><br><br>
 
-  <div class="field">
-    <%= form.label :nomProducto %>
-    <%= form.text_field :nomProducto, id: :producto_nomProducto %>
-  </div>
+              <div class="field">
+                  <%= form.label :Identificador %>
+                  <%= form.text_field :identificador, id: :producto_identificador %>
+              </div><br><br>
 
-  <div class="field">
-    <%= form.label :caracteristica %>
-    <%= form.text_field :caracteristica, id: :producto_caracteristica %>
-  </div>
+              <div class="field">
+                  <%= form.label :nomProducto %>
+                  <%= form.text_field :nomProducto, id: :producto_nomProducto %>
+                </div><br><br>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+          </div>
+          <div class="col-xs-3">
+          </div>
+          <div class="col-xs-4">
+
+                 <div class="field">
+                  <%= form.label :cantidad %>
+                  <%= form.number_field :cantidad, id: :producto_cantidad %>
+                </div> <br><br>
+                
+                <div class="field">
+                  <%= form.label :caracteristica %>
+                  <%= form.text_field :caracteristica, id: :producto_caracteristica %>
+                </div><br><br>
+          </div>
+          <div class="col-xs-3">
+          </div>
+      </div>
+    </div>
+
+        <div class="col-xs-3">
+                <div class="actions">
+                  <%= form.submit %>
+                </div>
+              <% end %>
+        </div>

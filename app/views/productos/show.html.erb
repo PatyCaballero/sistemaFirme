@@ -14,10 +14,15 @@
           <div class="col-xs-10">
             <table class="table table-striped">
 
-            		<td><p>
+          <td><p>
 					  <strong>Categoria:</strong>
 					  <%= @producto.categoria.nombre %>
 					</p></td>
+
+          <td><p>
+            <strong>Identificador:</strong>
+            <%= @producto.identificador %>
+          </p></td>
 
 					<td><p>
 					  <strong>Nombre Producto:</strong>
@@ -28,6 +33,11 @@
 					  <strong>Caracteristica:</strong>
 					  <%= @producto.caracteristica %>
 					</p></td>
+
+          <td><p>
+            <strong>Cantidad:</strong>
+            <%= @producto.cantidad %>
+          </p></td>
 
 			</tr>
               </tbody>
