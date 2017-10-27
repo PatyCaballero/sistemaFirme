@@ -1,3 +1,5 @@
 class Producto < ApplicationRecord
 	belongs_to :categoria
-end
+
+	has_many :puestos
+end 

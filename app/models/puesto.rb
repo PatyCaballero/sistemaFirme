@@ -6,8 +6,9 @@ class Puesto < ApplicationRecord
 
 	belongs_to :cliente
 	belongs_to :regis_guardium
+	belongs_to :producto
 
 	
 	#Paginacion
-	self.per_page = 10
+	self.per_page = 10 
 end
