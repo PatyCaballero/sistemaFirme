@@ -1,20 +1,23 @@
 class PuestosController < ApplicationController
-  before_action :set_puesto, only: [:show, :edit, :update, :destroy]
+  before_action :set_puesto, only: [:show, :edit, :update, :destroy] 
 
   # GET /puestos
   # GET /puestos.json
   def index
-    
-    if params[:search].nil?
+
       @puestos = Puesto.all
-    else
-      @puestos = Puesto.where("nombre LIKE ?", "%#{params["search"]}%")
-    end
-  end
+
+
+end
 
   # GET /puestos/1
   # GET /puestos/1.json
   def show
+    @sumar = 0
+      if params[:id]
+       @sumar =  @puesto.producto.cantidad - @puesto.cantidad 
+     else
+     end
   end
 
   # GET /puestos/new
@@ -60,6 +63,11 @@ class PuestosController < ApplicationController
     end
   end
 
+def sumar 
+
+  
+end
+
   # DELETE /puestos/1
   # DELETE /puestos/1.json
   def destroy
@@ -78,6 +86,6 @@ class PuestosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def puesto_params
-      params.require(:puesto).permit(:direccion, :turno, :hora_entrada, :hora_salida, :cliente_id, :regis_guardium_id, :estado )
+      params.require(:puesto).permit(:direccion, :turno, :hora_entrada, :hora_salida, :cliente_id, :regis_guardium_id, :estado, :fechaInicio, :fechaFin, :producto_id, :cantidad, productos_attributes:[:nomProducto, :caracteristica, :categoria_id, :identificador, :cantidad, :puesto_id])
     end
 end 
