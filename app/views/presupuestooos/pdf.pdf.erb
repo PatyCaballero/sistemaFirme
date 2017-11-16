@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<%= wicked_pdf_stylesheet_link_tag 'presupuestooos'%>
+<meta charset= "utf-8">
+
+<title>Presupuesto</title>
+</head>
+<body>
+<table>
+	<thead>
+		<tr>
+			<th>Fecha</th>
+            <th>Turno</th>
+            <th>Cantidad Hora</th>
+            <th>Cantidad Guardia</th>
+            <th>Monto Mensual</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<% @presupuestooos.each do |presupuestooo| %>
+		<tr> 
+			<td><%= presupuestooo.fecha %></td>
+            <td><%= presupuestooo.turno.nombre %></td>
+            <td><%= presupuestooo.cantHora %></td>
+            <td><%= presupuestooo.cantGuardia %></td>
+            <td><%= presupuestooo.montoMensual %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+<div id="main-container" class="container">
+      <div class="row"><br><br>
+      <div class="col-xs-12">
+          <div class="col-xs-6">
+          </div>
+
+          <div class="col-xs-6">
+              <%= link_to edit_presupuestooo_path(@presupuestooo), class: "btn btn-info" do %><i class="glyphicon glyphicon-pencil"></i> Editar <% end %> |
+              <%= link_to presupuestooos_path, class: "btn btn-default"  do %><i class="glyphicon glyphicon-arrow-left"></i> Atras <% end %> 
+          </div>
+          <br><br><br><br>
+         
+          <div class="col-xs-12">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>Fecha</th>
+                    <th>Turno</th>
+                    <th>Cantidad Hora</th>
+                    <th>Cantidad Guardia</th>
+                    <th>Monto Mensual </th>
+                    <th colspan="3"></th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                      <td><p class="navbar-text">
+                        <%= @presupuestooo.fecha %>
+                      </p></td>
+
+                      <td><p class="navbar-text">
+                        <%= @presupuestooo.turno.nombre %>
+                      </p></td>
+
+                      <td><p class="navbar-text">
+                        <%= @presupuestooo.cantHora %>
+                      </p></td>
+
+                      <td><p class="navbar-text">
+                        <%= @presupuestooo.cantGuardia %>
+                      </p></td>
+
+                      <td><p class="navbar-text">
+                        <%= @presupuestooo.montoMensual %>
+                      </p></td>
+                  </tr>
+                  </tbody>
+              </table>          
+          </div>
+
+           <%= button_to "Imprimir", presupuestooo_path(@presupuestooo) %> 
+           <a class="btn btn-default" href="presupuestooos/pdf" role="button">Imprimir</a>

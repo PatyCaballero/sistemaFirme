@@ -1,0 +1,21 @@
+<div id="main-container" class="container">
+      <div class="row">
+      <div class="col-xs-12">
+	        <div class="col-xs-3">
+
+				<h2>Editar Presupuesto</h2><br><br>
+			</div>
+			<div class="col-xs-6">
+			</div>
+			<div class="col-xs-3">
+
+				<%= link_to @presupuestooo, class: "btn btn-info" do %> <i class="glyphicon glyphicon-eye-open"></i>  Ver <% end %> |
+				<%= link_to presupuestooos_path , class: "btn btn-default"  do %><i class="glyphicon glyphicon-arrow-left"></i> Atras <% end %> 
+			</div>
+
+				<%= render 'form', presupuestooo: @presupuestooo, class: "btn btn-info" do %>
+				<% end %>
+
+			</div>
+	</div>
+</div>
