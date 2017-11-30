@@ -10,28 +10,41 @@
       </ul>
     </div>
   <% end %>
+ <div id="main-container" class="container">
+      <div class="row">
+      <div class="col-xs-12">
+          <div class="col-xs-3">
+          </div>
+          <div class="jumbotron">
+            <div class="container">
+          <div class="col-xs-4">
+              <form class="form-inline">
+                    <div class="field">
+                        <%= form.label "Puesto" %>
+                        <%= form.collection_select(:puesto_id, Puesto.all, :id, :cliente_id) %>
+                    </div><br><br>
 
-  <div class="field">
-    <%= form.label :horaEntrada %>
-    <%= form.time_select :horaEntrada, id: :reporte_horaEntrada %>
-  </div>
+                    <div class="field">
+                        <%= form.label "Hora Entrada" %>
+                        <%= form.datetime_field :horaEntrada, id: :reporte_horaEntrada %>
+                    </div><br><br>
+  
+                      <div class="field">
+                        <%= form.label "Hora Salida" %>
+                        <%= form.datetime_field :horaSalida, id: :reporte_horaSalida %>
+                      </div><br><br>
 
-  <div class="field">
-    <%= form.label :horaSalida %>
-    <%= form.time_select :horaSalida, id: :reporte_horaSalida %>
-  </div>
+                      <!--<div class="field">
+                        <%= form.label :estado %>
+                        <%= form.text_field :estado, id: :reporte_estado %>
+                      </div><br><br>-->
 
-  <div class="field">
-    <%= form.label :estado %>
-    <%= form.text_field :estado, id: :reporte_estado %>
-  </div>
+                      <div class="field">
+                         <%= form.label "Ausente" %>
+                         <%= form.check_box :novedad, id: :reporte_novedad %><br><br>
+                      </div>
 
-  <div class="field">
-    <%= form.label :novedad %>
-    <%= form.text_field :novedad, id: :reporte_novedad %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+                      <div class="actions">
+                        <%= form.submit %>
+                      </div>
+                    <% end %>

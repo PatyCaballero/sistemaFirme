@@ -1,33 +1,85 @@
 <p id="notice"><%= notice %></p>
+ <div id="main-container" class="container">
+      <div class="row">
+      <div class="col-xs-12">
+        <div class="col-xs-3">
+            <h2>Reportes</h2><br><br><br>
+        </div>
+      
+        <div class="col-xs-5">        
+        </div>
 
-<h1>Reportes</h1>
+        <div class="col-xs-3">
+            <%= link_to new_reporte_path , class: 'btn btn-success' do %>
+            <i class="glyphicon glyphicon-calendar"></i> Nuevo Reporte
+           <% end %>
+          </div>
+<div class="col-xs-12">
 
-<table>
-  <thead>
-    <tr>
-      <th>Horaentrada</th>
-      <th>Horasalida</th>
-      <th>Estado</th>
-      <th>Novedad</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+                <div class="col-xs-3">
 
-  <tbody>
-    <% @reportes.each do |reporte| %>
-      <tr>
-        <td><%= reporte.horaEntrada %></td>
-        <td><%= reporte.horaSalida %></td>
-        <td><%= reporte.estado %></td>
-        <td><%= reporte.novedad %></td>
-        <td><%= link_to 'Show', reporte %></td>
-        <td><%= link_to 'Edit', edit_reporte_path(reporte) %></td>
-        <td><%= link_to 'Destroy', reporte, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+                </div>
+                <div class="col-xs-3">
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                            <th> Guardia </th>
+                            <th> Puesto </th>
+                            <th>Horaentrada</th>
+                            <th>Horasalida</th>
+                           <!-- <th>Estado</th> -->
+                            <th>Estado</th>
+                            <th colspan="3"></th>
+                          </tr>
+                      </thead>
 
-<br>
+                      <tbody>
+                        <% @reportes.each do |reporte| %>
+                        <tr>
+                         
+                          <td><%= reporte.puesto.regis_guardium.nombre %></td>
+                          <td><%= reporte.puesto.cliente.nombre %></td>
+                          <td><%= reporte.horaEntrada %></td>
+                          <td><%= reporte.horaSalida %></td>
+                          <!--<td><%= reporte.estado %></td>--> 
+                          <td><%= reporte.novedad %></td>
 
-<%= link_to 'New Reporte', new_reporte_path %>
+                          <td><%= link_to reporte, class: 'btn btn-info' do %>
+                                <i class="glyphicon glyphicon-eye-open"></i> Ver <% end %> 
+                          </td>
+                          <td><%= link_to edit_reporte_path(reporte), class: 'btn btn-info' do %>
+                              <i class="glyphicon glyphicon-edit"></i> Editar <% end %>
+                          </td>
+                          <!--<td><%= link_to reporte, method: :delete, data: { confirm: 'Estas seguro de Eliminar' }, class: 'btn btn-primary' do %>
+                            <i class="glyphicon glyphicon-trash"></i> Eliminar <% end %>
+                          </td>-->
+                        </tr>
+                <% end %>
+              </tbody>
+            </table>
+        </div>               
+
+                  </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-5">
+          </div>
+          
+         <!-- <div class="col-xs-3">
+              <nav aria-label="...">
+                  <ul class="pager">
+                      <li><a href="">Anterior</a></li>
+                      <li><a href="">Siguiente</a></li>
+                  </ul>
+              </nav>
+          </div>
+          -->
+          
+
+</div> 
+
+</div>
+</div>
+</div>

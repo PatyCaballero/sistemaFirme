@@ -1,6 +1,22 @@
-<h1>Editing Reporte</h1>
+<div id="main-container" class="container">
+      <div class="row">
+      <div class="col-xs-12">
+	        <div class="col-xs-3">
 
-<%= render 'form', reporte: @reporte %>
+				<h2>Editar Reporte</h2>
+			</div>
+			<div class="col-xs-6">
+			</div>
+			<div class="col-xs-3">
 
-<%= link_to 'Show', @reporte %> |
-<%= link_to 'Back', reportes_path %>
+				<%= link_to @reporte, class: "btn btn-info" do %> <i class="glyphicon glyphicon-eye-open"></i>  Ver <% end %> |
+				<%= link_to reportes_path , class: "btn btn-default"  do %><i class="glyphicon glyphicon-arrow-left"></i> Atras <% end %> 
+			</div>
+
+			<%= render 'form', reporte: @reporte, class: "btn btn-info" do %>
+				<% end %>
+
+			</div>
+	</div>
+</div>
+
