@@ -1,5 +1,7 @@
 class Reporte < ApplicationRecord
-	validates :horaEntrada, :horaSalida, :estado, :novedad, presence: true
+	#validates :horaEntrada, :horaSalida, :novedad, presence: true
 
-	belongs_to :calendario
+	#belongs_to :calendario
+	belongs_to :puesto
+	
 end
