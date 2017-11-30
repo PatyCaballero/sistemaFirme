@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Presupuesto</title>
+</head>
+<body>
+	<DIV ALIGN=right>Fecha</DIV>
+
+	<br><br><br>
+	<hr>
+	<table>
+        <thead>
+            <tr>
+                <td><strong>Turno</strong></td>
+                <td><strong>Cantidad Hora</strong></td>
+                <td><strong>Cantidad Guardia</strong></td>
+                <td><strong>Monto Mensual</strong></td>
+                <td colspan="3"></td>
+            </tr>
+        </thead>
+
+        <tbody>
+        	<tr>
+        		<td><%= @presupuestooo.turno.nombre %></td>
+                <td><%= @presupuestooo.cantHora %></td>
+                <td><%= @presupuestooo.cantGuardia %></td>
+                <td><%= @presupuestooo.montoMensual %></td>
+            </tr>
+
+        </tbody>
+    </table>
+</body>
+</html>

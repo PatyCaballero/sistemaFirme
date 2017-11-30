@@ -7,7 +7,9 @@
 
           <div class="col-xs-6">
               <%= link_to edit_presupuestooo_path(@presupuestooo), class: "btn btn-info" do %><i class="glyphicon glyphicon-pencil"></i> Editar <% end %> |
-              <%= link_to presupuestooos_path, class: "btn btn-default"  do %><i class="glyphicon glyphicon-arrow-left"></i> Atras <% end %> 
+              <%= link_to presupuestooos_path, class: "btn btn-default"  do %><i class="glyphicon glyphicon-arrow-left"></i> Atras <% end %> |
+            <%= link_to imprimir_presupuestooo_path(@presupuestooo, format: :pdf), method: :get, class: "btn btn-success" do  %> 
+                      <i class="glyphicon glyphicon-print"></i> Imprimir<% end %>
           </div>
           <br><br><br><br>
          
@@ -50,5 +52,4 @@
               </table>          
           </div>
 
-           <%= button_to "Imprimir", presupuestooo_path(@presupuestooo) %> 
-           <a class="btn btn-default" href="presupuestooos/pdf" role="button">Imprimir</a>
+           
