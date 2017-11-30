@@ -1,38 +1,30 @@
 class PresupuestooosController < ApplicationController
   before_action :set_presupuestooo, only: [:show, :edit, :update, :destroy]
-
-  # GET /presupuestooos
+   # GET /presupuestooos
   # GET /presupuestooos.json
   def index
     @presupuestooos = Presupuestooo.all
-   
-    #generar pdf
-    respond_to do |format|
-      format.html
-      format.json
-      format.pdf {render template: 'presupuestooos/pdf', pdf: 'pdf'}
-    end
+     
   end
 
+  def imprimir
+      #generar pdf
+     @presupuestooo = Presupuestooo.find(params[:id])
+     if params[:id]
+        respond_to do |format|
+        format.html
+        format.pdf {render template: 'presupuestooos/imprimir', pdf: 'imprimir'}
+      end
+      else 
+      end
+  end
   # GET /presupuestooos/1
   # GET /presupuestooos/1.json
 
   def show
     #calculo de presupuesto
      
-
-end
-
-  def pdf
-    respond_to do |format|
-      if @presupuestooo.save
-        format.pdf {render template: 'presupuestooos/pdf', pdf:'pdf'}     # Excluyendo la extensión ".pdf". 
-      else
-      end
-    end
   end
-
-
 
   # GET /presupuestooos/new
   def new
