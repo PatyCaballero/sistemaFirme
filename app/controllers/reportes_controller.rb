@@ -5,6 +5,7 @@ class ReportesController < ApplicationController
   # GET /reportes.json
   def index
     @reportes = Reporte.all
+   
   end
 
   # GET /reportes/1
@@ -28,7 +29,7 @@ class ReportesController < ApplicationController
 
     respond_to do |format|
       if @reporte.save
-        format.html { redirect_to @reporte, notice: 'Reporte was successfully created.' }
+        format.html { redirect_to @reporte, notice: 'Se ha Creado.' }
         format.json { render :show, status: :created, location: @reporte }
       else
         format.html { render :new }
@@ -42,7 +43,7 @@ class ReportesController < ApplicationController
   def update
     respond_to do |format|
       if @reporte.update(reporte_params)
-        format.html { redirect_to @reporte, notice: 'Reporte was successfully updated.' }
+        format.html { redirect_to @reporte, notice: 'Se ha Actualizado.' }
         format.json { render :show, status: :ok, location: @reporte }
       else
         format.html { render :edit }
@@ -56,7 +57,7 @@ class ReportesController < ApplicationController
   def destroy
     @reporte.destroy
     respond_to do |format|
-      format.html { redirect_to reportes_url, notice: 'Reporte was successfully destroyed.' }
+      format.html { redirect_to reportes_url, notice: 'Se ha Eliminado.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +70,6 @@ class ReportesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reporte_params
-      params.require(:reporte).permit(:horaEntrada, :horaSalida, :estado, :novedad)
+      params.require(:reporte).permit(:horaEntrada, :horaSalida, :estado, :novedad,:puesto_id)
     end
 end
