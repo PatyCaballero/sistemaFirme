@@ -11,54 +11,100 @@
 
           </div>
           <br><br><br><br>
-          <div class="col-xs-10">
-            <table class="table table-striped">
+         
+          			<div class="col-xs-12">
+                    <table class="table table-hover">
+                      <thead>
+                      	<tr>
+                          <th>Puesto</th>
+                          <th>Guardia</th>
+                          <th>Fecha Inicio</th>
+                          <th>Hora Entrada</th>                        
+                         <th>Hora Salida</th>
+                          <th>Fecha Fin</th>
+                          <th>Estado</th>
+                          <th colspan="3"></th>
+                        </tr>
+                      </thead>
 
-            		<td><p>
-					  <strong>Cliente:</strong>
-					  <%= @puesto.cliente.nombre %>
-					</p></td>
+                      <tbody>
+                        <tr>
+		            		<td><p class="navbar-text">
+							
+							 <%= @puesto.cliente.nombre %>
+							</p></td>
+				
+							<td><p class="navbar-text">
+							 
+							  <%= @puesto.regis_guardium.nombre %>
+							</p></td>
+							
+										
+							<td><p class="navbar-text">
+							  
+							  <%= @puesto.fechaInicio %>
+							</p></td>
+							<br>
 
-					<td><p>
-					  <strong>Guardia:</strong>
-					  <%= @puesto.regis_guardium.nombre %>
-					</p></td>
+							<td><p class="navbar-text">
+							  
+							  <%= @puesto.hora_entrada %>
+							</p></td>
+							
+							<td><p class="navbar-text">
+							  
+							  <%= @puesto.hora_salida %>
+							</p></td>
 
-					<td><p>
-					  <strong>Armamentos:</strong>
-					  <%= @puesto.producto.nomProducto %>
-					</p></td>
-					
+							<td><p class="navbar-text">
+							  
+							  <%= @puesto.fechaFin %>
+							</p></td>
+						</tr>
+		              </tbody>
+		            </table>          
+          		</div>
 
-					<td><p>
-					  <strong>Cantidad:</strong>
-					  <%= @puesto.cantidad %>
-					</p></td>
+          		<div class="col-xs-7">
+          		</div>
 
-					<td><p>
-					  <strong>Fecha Inicio:</strong>
-					  <%= @puesto.fechaInicio %>
-					</p></td>
+          		<br><br>
+          		<div class="col-xs-7">
+                    <table class="table table-hover">
+                      <thead>
+                      	<tr>
+          					<th>Equipamientos</th>
+                          	<th>Cantidad Asignado</th>
+                          	<!--<th> Cantidad Disponible </th> -->
+                        </tr>
+                       </thead>
 
-					<td><p>
-					  <strong>Hora entrada:</strong>
-					  <%= @puesto.hora_entrada %>
-					</p></td>
+                      <tbody>
+                        <tr>
+                        	<td><p class="navbar-text">
+							  
+							  <%= @puesto.producto.nomProducto %>
+							</p></td>
 
-					<td><p>
-					  <strong>Hora salida:</strong>
-					  <%= @puesto.hora_salida %>
-					</p></td>
+							<td><p class="navbar-text">
+							  
+							  <%= @puesto.cantidad %>
+							</p></td>
+							
+							<td><p class="navbar-text">
+							  
+							 <!--<%= @sumar %> -->
+							</p></td>
+						</tr>
+		              </tbody>
+		            </table>          
+          		</div>
 
-					<td><p>
-					  <strong>Fecha Fin:</strong>
-					  <%= @puesto.fechaFin %>
-					</p></td>
-				</tr>
-              </tbody>
-            </table>          
-          </div>
-      </div>
-    </div>
-  </div>
+          		<div class="col-xs-7">
+          		</div>
 
+      		</div>
+    	</div>
+  	</div>
+
+<div id="calendar"></div>
