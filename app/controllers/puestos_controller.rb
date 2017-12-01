@@ -7,17 +7,35 @@ class PuestosController < ApplicationController
 
       @puestos = Puesto.all
 
+      #if params[:id]
+       #@sumar =  @puesto.producto.cantidad - @puesto.cantidad 
+     #else
+     #end
 
-end
+  end
+  def pdf
+    #generar pdf
+    @puesto = Puesto.find(params[:id])
+    if params[:id]
+      respond_to do |format|
+        format.html
+        format.pdf {render template: 'puestos/pdf', pdf: 'pdf'}
+      end
+    else 
+    end
 
+  end
+  
   # GET /puestos/1
   # GET /puestos/1.json
   def show
-    @sumar = 0
-      if params[:id]
-       @sumar =  @puesto.producto.cantidad - @puesto.cantidad 
-     else
-     end
+   # @sumar = 0
+    # if params[:id]
+     #  @sumar =  @puesto.producto.cantidad - @puesto.cantidad 
+     #end
+
+      #   @disponible = (@puesto.producto.cantidad - @puesto.cantidad)
+ 
   end
 
   # GET /puestos/new
@@ -38,6 +56,12 @@ end
   def create
     @puesto = Puesto.new(puesto_params)
 
+    #calcular cant de producto disponibles, despues de haber asignado
+    #@cont = 0
+    #if (@cont <= @puesto.producto.cantidad)
+        @sumar =  @puesto.producto.cantidad - @puesto.cantidad  
+        @puesto.cantidadDisponible = @sumar
+    #end
     respond_to do |format|
       if @puesto.save
         format.html { redirect_to @puesto, notice: 'Puesto Creado.' }
@@ -86,6 +110,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def puesto_params
-      params.require(:puesto).permit(:direccion, :turno, :hora_entrada, :hora_salida, :cliente_id, :regis_guardium_id, :estado, :fechaInicio, :fechaFin, :producto_id, :cantidad, productos_attributes:[:nomProducto, :caracteristica, :categoria_id, :identificador, :cantidad, :puesto_id])
+      params.require(:puesto).permit(:direccion, :turno, :hora_entrada, :hora_salida, :cliente_id, :regis_guardium_id, :estado, :fechaInicio, :fechaFin, :producto_id, :cantidad, :cantidadDisponible, productos_attributes:[:nomProducto, :caracteristica, :categoria_id, :identificador, :cantidad, :puesto_id])
     end
 end 
