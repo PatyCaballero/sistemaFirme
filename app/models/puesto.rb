@@ -8,6 +8,8 @@ class Puesto < ApplicationRecord
 	belongs_to :regis_guardium
 	belongs_to :producto
 
+	has_many :reportes
+	#has_many :productos
 	accepts_nested_attributes_for  :producto
 	
 	
