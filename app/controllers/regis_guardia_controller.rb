@@ -7,7 +7,7 @@ class RegisGuardiaController < ApplicationController
 
     if params[:search].nil?
       @regis_guardia = RegisGuardium.all
-      #@regis_guardia = RegisGuardium.where ("estado = False")
+     # @regis_guardia = RegisGuardium.where ("estado = False")
     else
 
       @regis_guardia = RegisGuardium.where("nombre LIKE ?", "%#{params["search"]}%")
