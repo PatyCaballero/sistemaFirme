@@ -29,10 +29,10 @@ class PuestosController < ApplicationController
   # GET /puestos/1
   # GET /puestos/1.json
   def show
-   # @sumar = 0
-    # if params[:id]
-     #  @sumar =  @puesto.producto.cantidad - @puesto.cantidad 
-     #end
+    @sumar = 0
+     if params[:id]
+       @sumar =  @puesto.producto.cantidad - @puesto.cantidad 
+     end
 
       #   @disponible = (@puesto.producto.cantidad - @puesto.cantidad)
  
@@ -59,8 +59,8 @@ class PuestosController < ApplicationController
     #calcular cant de producto disponibles, despues de haber asignado
     #@cont = 0
     #if (@cont <= @puesto.producto.cantidad)
-        @sumar =  @puesto.producto.cantidad - @puesto.cantidad  
-        @puesto.cantidadDisponible = @sumar
+        #@sumar =  @puesto.producto.cantidad - @puesto.cantidad 
+        #@puesto.cantidadDisponible = @sumar
     #end
     respond_to do |format|
       if @puesto.save
