@@ -5,13 +5,30 @@ class ProductosController < ApplicationController
   # GET /productos.json
   def index
     @productos = Producto.all
+    #calcular cant de producto disponibles, despues de haber asignado
+    #@disponible = (@producto.cantidad - @producto.puesto.cantidad)
+    #@producto.cantidadDisponible = @disponible
+    
   end
 
   # GET /productos/1
   # GET /productos/1.json
   def show
+
+    # @sumar = 0
+     # if params[:id]
+      #  @sumar =  @producto.cantidad - @puesto.cantidad 
+     #else
+     #end
+     #@producto.cantidad = "cantidadTotalStock" 
+     #@puesto.cantidad = "cantidadAsignado"
+     #@restaStock = cantidadTotalStock - cantidadAsignado
+     #@cantidadDisponible = @restaStock
+
+     
   end
 
+  
   # GET /productos/new
   def new
     @producto = Producto.new
@@ -23,9 +40,11 @@ class ProductosController < ApplicationController
 
   # POST /productos
   # POST /productos.json
+
+
+
   def create
     @producto = Producto.new(producto_params)
-
     respond_to do |format|
       if @producto.save
         format.html { redirect_to @producto, notice: 'Se ha Creado.' }
@@ -41,7 +60,17 @@ class ProductosController < ApplicationController
   # PATCH/PUT /productos/1.json
   def update
     respond_to do |format|
+      cantStock = 0
+       cantAsig = 0
       if @producto.update(producto_params)
+       
+       @producto.cantidad = cantStock
+       @puesto.cantidad = cantAsig
+       @restaStock = cantStock - cantAsig
+
+       @producto.update(cantidad: restaStock)
+    
+
         format.html { redirect_to @producto, notice: 'Se ha actualizado.' }
         format.json { render :show, status: :ok, location: @producto }
       else
@@ -65,6 +94,9 @@ class ProductosController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_producto
       @producto = Producto.find(params[:id])
+    end
+    def set_puesto
+       @puesto = Puesto.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
