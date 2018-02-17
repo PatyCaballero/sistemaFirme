@@ -6,7 +6,10 @@
             <h2>Registrar Guardia</h2><br><br><br>
         </div>
       
-        <div class="col-xs-5">        
+        <div class="col-xs-5">  
+              <%= link_to new_regis_guardium_path, class: 'btn btn-success' do %>
+              <i class="glyphicon glyphicon-user"></i> 
+               <% end %>      
         </div>
         <div class="col-xs-4">
             <%= form_tag regis_guardia_path, :method => 'get' do %>
@@ -16,8 +19,7 @@
                 </p>
             <% end %>
         </div>
-
-    
+      
                     <table class="table table-hover">
                         <thead>
                             <tr>
@@ -37,7 +39,6 @@
                               <th>Direccion Alternativa</th>
                               <th>Tel. Urgencia</th>
                               <th>Fecha Ingreso</th>
-                              <th>Sueldo Inicial</th>
                               <th>Observacion</th>-->
                               <th>Estado</th>
                               <th colspan="3"></th></b>
@@ -63,7 +64,6 @@
                                   <td><%= regis_guardium.direccionAlternativa %></td>
                                   <td><%= regis_guardium.telUrgencia %></td>
                                   <td><%= regis_guardium.fechaIngreso %></td>
-                                  <td><%= regis_guardium.sueldoInicial %></td>
                                   <td><%= regis_guardium.observacion %></td> -->
                                   <td><%= regis_guardium.estado %></td>
 
@@ -87,12 +87,7 @@
                   </div>
             </div>
 
-          <div class="col-xs-3">
-            <%= link_to new_regis_guardium_path, class: 'btn btn-success' do %>
-            <i class="glyphicon glyphicon-user"></i> Nuevo Registro
-             <% end %>
-          </div>
-
+         
           <div class="col-xs-5">
           </div>
           

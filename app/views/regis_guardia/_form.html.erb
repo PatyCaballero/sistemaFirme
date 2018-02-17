@@ -125,15 +125,10 @@
                             </div>
                         </div>
 
-                        <div class="col-xs-3">
-                           <div class="field">
-                            <%= form.text_field :sueldoInicial, id: :regis_guardium_sueldoInicial, class:"form-control", placeholder:"Sueldo Inicial" %><br><br>
-                          </div>
-                        </div>
-
+                        
                         <div class="col-xs-6">
                            <div class="field">
-                            <%= form.text_field :observacion, id: :regis_guardium_observacion, class:"form-control", placeholder:"Observacion" %><br><br>
+                            <%= form.text_area :observacion, id: :regis_guardium_observacion, class:"form-control", placeholder:"Observacion" %><br><br>
                             </div>
                         </div>
                   </div>
@@ -144,7 +139,7 @@
           <div class="col-xs-4">
 
                     <div class="field">
-                          <%= form.label "Desvinculado/Muerto" %>
+                          <%= form.label "Ocupado?" %>
                           <%= form.check_box :estado, id: :regis_guardium_estado %>
                     </div>
           </div>
