@@ -1,9 +1,24 @@
 Rails.application.routes.draw do
   
+
+  resources :turnos
+
+  resources :presupuestooos do
+      member do
+        get 'imprimir'
+    end
+  end
+  
+  resources :categorias
   resources :productos
   resources :control_stock
   resources :stock
-  resources :puestos
+  
+  resources :puestos do
+            member do
+            get 'pdf'
+          end
+        end
   resources :clientes
   resources :asignar_puestos
   resources :registro_clientes
@@ -19,10 +34,11 @@ Rails.application.routes.draw do
   resources :calendarios
   resources :registro_puestos
 
-  get 'regis_guardia/index'
-  get 'regis_guardia/show'
+  get 'lista_puestos/index'
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'regis_guardia#index'
 
   post 'stock/incStock'
+
 end
