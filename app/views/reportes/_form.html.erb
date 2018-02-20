@@ -1,4 +1,4 @@
-<%= form_with(model: reporte, local: true) do |form| %>
+<%= form_with(model: reporte, local: true) do |form| %> 
   <% if reporte.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(reporte.errors.count, "error") %> prohibited this reporte from being saved:</h2>
@@ -21,7 +21,7 @@
               <form class="form-inline">
                     <div class="field">
                         <%= form.label "Puesto" %>
-                        <%= form.collection_select(:puesto_id, Puesto.all, :id, :cliente_id) %>
+                        <%= form.collection_select(:puesto_id, Cliente.all, :id, :nombre) %>
                     </div><br><br>
 
                     <div class="field">
