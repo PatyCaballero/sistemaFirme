@@ -3,5 +3,6 @@ class Reporte < ApplicationRecord
 
 	#belongs_to :calendario
 	belongs_to :puesto
-	
+	#belongs_to :cliente
+	#belongs_to :regis_guardia
 end
