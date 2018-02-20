@@ -60,8 +60,7 @@ class ProductosController < ApplicationController
   # PATCH/PUT /productos/1.json
   def update
     respond_to do |format|
-      cantStock = 0
-       cantAsig = 0
+      
       if @producto.update(producto_params)
        
        @producto.cantidad = cantStock
@@ -101,6 +100,6 @@ class ProductosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def producto_params
-      params.require(:producto).permit(:nomProducto, :caracteristica, :categoria_id, :identificador, :cantidad, :puesto_id)
+      params.require(:producto).permit(:nomProducto, :caracteristica, :categoria_id, :identificador, :cantidad)
     end
 end
