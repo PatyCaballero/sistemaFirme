@@ -1,0 +1,107 @@
+<%= form_with(model: guardia, local: true) do |form| %>
+  <% if guardia.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(guardia.errors.count, "error") %> prohibited this guardia from being saved:</h2>
+
+      <ul>
+      <% guardia.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nombre %>
+    <%= form.text_field :nombre, id: :guardia_nombre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :apellido %>
+    <%= form.text_field :apellido, id: :guardia_apellido %>
+  </div>
+
+  <div class="field">
+    <%= form.label :numDocumento %>
+    <%= form.number_field :numDocumento, id: :guardia_numDocumento %>
+  </div>
+
+  <div class="field">
+    <%= form.label :direccion %>
+    <%= form.text_field :direccion, id: :guardia_direccion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :telefono %>
+    <%= form.text_field :telefono, id: :guardia_telefono %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fechaNacimiento %>
+    <%= form.date_select :fechaNacimiento, id: :guardia_fechaNacimiento %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nacionalidad %>
+    <%= form.text_field :nacionalidad, id: :guardia_nacionalidad %>
+  </div>
+
+  <div class="field">
+    <%= form.label :estadoCivil %>
+    <%= form.text_field :estadoCivil, id: :guardia_estadoCivil %>
+  </div>
+
+  <div class="field">
+    <%= form.label :edad %>
+    <%= form.number_field :edad, id: :guardia_edad %>
+  </div>
+
+  <div class="field">
+    <%= form.label :grupoSanguineo %>
+    <%= form.text_field :grupoSanguineo, id: :guardia_grupoSanguineo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :estudios %>
+    <%= form.text_field :estudios, id: :guardia_estudios %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nombrePadre %>
+    <%= form.text_field :nombrePadre, id: :guardia_nombrePadre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nombreMadre %>
+    <%= form.text_field :nombreMadre, id: :guardia_nombreMadre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :direccionAlternativo %>
+    <%= form.text_field :direccionAlternativo, id: :guardia_direccionAlternativo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :telUrgencia %>
+    <%= form.text_field :telUrgencia, id: :guardia_telUrgencia %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fechaIngreso %>
+    <%= form.date_select :fechaIngreso, id: :guardia_fechaIngreso %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sueldoInicial %>
+    <%= form.text_field :sueldoInicial, id: :guardia_sueldoInicial %>
+  </div>
+
+  <div class="field">
+    <%= form.label :observacion %>
+    <%= form.text_field :observacion, id: :guardia_observacion %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
