@@ -5,12 +5,13 @@ class Puesto < ApplicationRecord
 
 
 	belongs_to :cliente
-	belongs_to :regis_guardium
-	belongs_to :producto
+	#belongs_to :regis_guardium
+
 
 	has_many :reportes
-	#has_many :productos
-	accepts_nested_attributes_for  :producto
+	has_many :puesto_puestos
+	accepts_nested_attributes_for  :puesto_puestos, allow_destroy: true
+	
 	
 	
 	#Paginacion
