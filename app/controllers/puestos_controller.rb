@@ -29,10 +29,10 @@ class PuestosController < ApplicationController
   # GET /puestos/1
   # GET /puestos/1.json
   def show
-    @sumar = 0
-     if params[:id]
-       @sumar =  @puesto.producto.cantidad - @puesto.cantidad 
-     end
+    #@sumar = 0
+     #if params[:id]
+     #  @sumar =  @puesto.producto.cantidad - @puesto.cantidad 
+     #end
 
       #   @disponible = (@puesto.producto.cantidad - @puesto.cantidad)
  
@@ -110,6 +110,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def puesto_params
-      params.require(:puesto).permit(:direccion, :turno, :hora_entrada, :hora_salida, :cliente_id, :regis_guardium_id, :estado, :fechaInicio, :fechaFin, :producto_id, :cantidad, :cantidadDisponible, productos_attributes:[:nomProducto, :caracteristica, :categoria_id, :identificador, :cantidad, :puesto_id])
+      params.require(:puesto).permit(:direccion, :turno, :hora_entrada, :hora_salida, :cliente_id, :estado, :fechaInicio, :fechaFin, :producto_id, :cantidad, :cantidadDisponible, :guardia_id, puesto_puestos_attributes: [:id, :puesto_id, :guardia_id])
     end
 end 
