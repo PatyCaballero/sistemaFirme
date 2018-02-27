@@ -1,61 +1,99 @@
 <p id="notice"><%= notice %></p>
+<div id="main-container" class="container">
+      <div class="row">
+      <div class="col-xs-12">
+        <div class="col-xs-3">
+            <h2>Registrar Guardia</h2><br><br><br>
+        </div>
+      
+        <div class="col-xs-5">  
+          <%= link_to new_guardia_path, class: 'btn btn-success' do %>
+              <i class="glyphicon glyphicon-user"></i> 
+               <% end %>      
+        </div>
+        <div class="col-xs-4">
+          <%= form_tag guardias_path, :method => 'get' do %>
+            <p>
+              <%= text_field_tag :search, params[:search] %>
+              <%= submit_tag "Buscar", :name => nil %>
+            </p>
+          <% end %>
+        </div>
 
-<h1>Guardias</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Apellido</th>
-      <th>Numdocumento</th>
-      <th>Direccion</th>
-      <th>Telefono</th>
-      <th>Fechanacimiento</th>
-      <th>Nacionalidad</th>
-      <th>Estadocivil</th>
-      <th>Edad</th>
-      <th>Gruposanguineo</th>
-      <th>Estudios</th>
-      <th>Nombrepadre</th>
-      <th>Nombremadre</th>
-      <th>Direccionalternativo</th>
-      <th>Telurgencia</th>
-      <th>Fechaingreso</th>
-      <th>Sueldoinicial</th>
-      <th>Observacion</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <b><th>Nombre</th>
+              <th>Apellido</th>
+              <th>Nº C.I</th>
+              <th>Direccion</th>
+              <th>Telefono</th>
+              <th>Fecha Nacimiento</th>
+              <th>Edad</th>
+              <th>Nacionalidad</th>
+              <!--<th>Estado Civil</th>
+              <th>Grupo Sanguineo</th>
+              <th>Estudios</th>
+              <th>Nombre del Padre</th>
+              <th>Nombre de la Madre</th>
+              <th>Direccion Alternativa</th>
+              <th>Tel. Urgencia</th>
+              <th>Fecha Ingreso</th>
+              <th>Observacion</th>
+              <th>Estado</th>-->
+              <th colspan="3"></th></b>
+            </tr>
+          </thead>
 
-  <tbody>
-    <% @guardias.each do |guardia| %>
-      <tr>
-        <td><%= guardia.nombre %></td>
-        <td><%= guardia.apellido %></td>
-        <td><%= guardia.numDocumento %></td>
-        <td><%= guardia.direccion %></td>
-        <td><%= guardia.telefono %></td>
-        <td><%= guardia.fechaNacimiento %></td>
-        <td><%= guardia.nacionalidad %></td>
-        <td><%= guardia.estadoCivil %></td>
-        <td><%= guardia.edad %></td>
-        <td><%= guardia.grupoSanguineo %></td>
-        <td><%= guardia.estudios %></td>
-        <td><%= guardia.nombrePadre %></td>
-        <td><%= guardia.nombreMadre %></td>
-        <td><%= guardia.direccionAlternativo %></td>
-        <td><%= guardia.telUrgencia %></td>
-        <td><%= guardia.fechaIngreso %></td>
-        <td><%= guardia.sueldoInicial %></td>
-        <td><%= guardia.observacion %></td>
-        <td><%= link_to 'Show', guardia %></td>
-        <td><%= link_to 'Edit', edit_guardia_path(guardia) %></td>
-        <td><%= link_to 'Destroy', guardia, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
 
-<%= link_to 'New Guardia', new_guardia_path %>
+          <tbody>
+            <% @guardias.each do |guardia| %>
+            <tr>
+              <td><%= guardia.nombre %></td>
+              <td><%= guardia.apellido %></td>
+              <td><%= guardia.numDocumento %></td>
+              <td><%= guardia.direccion %></td>
+              <td><%= guardia.telefono %></td>
+              <td><%= guardia.fechaNacimiento %></td>
+              <td><%= guardia.edad %></td>
+              <!--<td><%= guardia.nacionalidad %></td>
+              <td><%= guardia.estadoCivil %></td>
+              <td><%= guardia.grupoSanguineo %></td>
+              <td><%= guardia.estudios %></td>
+              <td><%= guardia.nombrePadre %></td>
+              <td><%= guardia.nombreMadre %></td>
+              <td><%= guardia.direccionAlternativo %></td>
+              <td><%= guardia.telUrgencia %></td>
+              <td><%= guardia.fechaIngreso %></td>
+              <td><%= guardia.sueldoInicial %></td>
+              <td><%= guardia.observacion %></td>-->
+              <td><%= link_to guardia, class: 'btn btn-info' do %>
+                  <i class="glyphicon glyphicon-eye-open"></i> Ver Más
+              <% end %> </td> 
+
+              <td><%= link_to edit_guardia_path(guardia), class: 'btn btn-info' do %>
+                  <i class="glyphicon glyphicon-edit"></i> Editar <% end %>
+              </td>
+
+              <td><%= link_to guardia, method: :delete, data: { confirm: 'Estás seguro de Borrar?' } , class: 'btn btn-primary' do %>
+                  <i class="glyphicon glyphicon-trash"></i> Eliminar <% end %>
+              </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  </div>
+
+    <div class="col-xs-5">
+    </div>
+          
+
+</div>
+
+</div>
+</div>
+</div>

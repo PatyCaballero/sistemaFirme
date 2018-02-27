@@ -1,5 +1,17 @@
-<h1>New Guardia</h1>
+<div id="main-container" class="container">
+      <div class="row">
+      <div class="col-xs-12">
+	        <div class="col-xs-3">
+				<h1>Nuevo Registro de Guardia</h1><br>
+			</div>
+		</div>
 
-<%= render 'form', guardia: @guardia %>
+		<%= render 'form', guardia: @guardia %> <br>
+	     <div class="col-xs-5">
+        </div>
+        <div class="col-xs-4">
+			<%= link_to guardias_path, class: "btn btn-default"  do %><i class="glyphicon glyphicon-arrow-left"></i> Atras <% end %>
+		</div>
+	</div>
+</div>
 
-<%= link_to 'Back', guardias_path %>
