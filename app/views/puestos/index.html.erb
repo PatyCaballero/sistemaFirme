@@ -44,17 +44,8 @@
                         <% @puestos.each do |puesto| %>
                           <tr>
                             <td><%= puesto.cliente.nombre %></td> 
-                            <td><%= puesto.regis_guardium.nombre %></td>
+                            <td><%= puesto.guardia_id %></td>
                             <td><%= puesto.hora_entrada %></td>
-
-                            <!--<td><%= puesto.cantidadDisponible %> </td>
-                            <td><%= puesto.producto.nomProducto %></td>
-                            <td><%= puesto.cantidad %></td>
-                            <td><%= puesto.fechaInicio %></td>
-                            <td><%= puesto.hora_salida %></td>
-                            <td><%= puesto.fechaFin %></td>
-                            <td><%= puesto.estado %></td>-->
-                            
 
                             <td><%= link_to puesto , class: 'btn btn-info' do %>
                                 <i class="glyphicon glyphicon-eye-open"></i> Ver <% end %> 

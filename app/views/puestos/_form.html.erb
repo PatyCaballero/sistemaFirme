@@ -14,73 +14,111 @@
 <div id="main-container" class="container">
       <div class="row">
       <div class="col-xs-12">
-          <div class="col-xs-3">
-          </div>
-          <div class="jumbotron">
-            <div class="container">
-          <div class="col-xs-4">
-              <form class="form-inline">
-                    <div class="field">
-                        <%= form.label "Puesto" %>
-                        <%= form.collection_select(:cliente_id, Cliente.all, :id, :nombre) %>
-                      </div><br><br>        
-                      <div class="field">
-                        <%= form.label "Guardias Disponibles" %>
-                        <%= form.collection_select(:regis_guardium_id, RegisGuardium.where(estado: "false"), :id, :nombre) %>
+         <b>
+        <form class="form-inline">
+            <div class="panel-body">
+              <div class="col-xs-10">
+                  <div class="field">
+                    <%= form.label "Puesto" %>
+                    <%= form.collection_select(:cliente_id, Cliente.all, :id, :nombre) %>
+                  </div>        
+              </div>     
 
-                      </div><br><br>
+              <br><br>
 
-                      <div class="field">
-                        <%= form.label "Equipamientos" %>
-                        <%= form.collection_select(:producto_id, Producto.all, :id, :nomProducto) %>
-                      </div><br><br>
+              <!-- Para seleccionar mas guardias en el formulario -->
+              <div class="col-xs-2">
+                  <%= form.label "Agregar Guardias" %>
+                  <%= form.nested_fields_for :puesto_puestos do |ff| %>
+                  <div class="field">
+                    <%= ff.label "Guardias Disponibles" %>
+                    <%= ff.collection_select(:guardia_id, Guardia.all, :id, :nombre) %>
+                    <%= ff.remove_nested_fields_link "Eliminar" %>
+                  <% end %>
+                    <%= form.add_nested_fields_link :puesto_puestos, class: 'btn btn-success' do %>
+                    <i class="glyphicon glyphicon-plus"></i><% end %>
+                  </div>
+              </div>
+              
+              <br>
 
-                      <div class="field">
-                        
-                        <%= form.number_field :cantidad, id: :puesto_cantidad, class: "form-control", placeholder:"Cantidad" %><br><br>
-                      </div>
+              <!-- Para seleccionar mas productos en el formulario -->
+              <div class="col-xs-10">
+                  <%= form.label "Agregar Equipamientos" %>
+                  <%= form.nested_fields_for :producto_puestos do |fff| %>
+                  <div class="field">
+                    <%= fff.label "Equipamientos" %>
+                    <%= fff.collection_select(:producto_id, Producto.all, :id, :nomProducto) %>
+                    <%= fff.number_field :cantidadAsignada, id: :producto_puestos_cantidadAsignada, class: "form-control", placeholder:"Cantidad" %><br><br>
+                  
+                    <%= fff.remove_nested_fields_link "Eliminar" %>
+                  <% end %>
+                    <%= form.add_nested_fields_link :producto_puestos, class: 'btn btn-success' do %>
+                    <i class="glyphicon glyphicon-plus"></i><% end %>
+                  </div>
+              </div>
+              
+              <br><br>
 
-                      
-          </div>
-          <div class="col-xs-3">
-          </div>
-          <div class="col-xs-4">
-                      
-                      <div class="field">
-                        <%= form.label "Fecha Inicio" %>
-                        <%= form.date_field :fechaInicio, id: :puesto_fechaInicio, class: "form-control", placeholder:"Fecha Inicio" %><br><br>
-                      </div>
+              
 
-                      <div class="field">
-                        <%= form.label "Hora Entrada" %>
-                        <%= form.time_field :hora_entrada, id: :puesto_hora_entrada, class: "form-control" %><br><br>
-                      </div>
+              <br><br>
 
-                      <div class="field">
-                          <%= form.label "Hora Salida " %>
-                         <%= form.time_field :hora_salida, id: :puesto_hora_salida, class: "form-control" %><br><br>
-                      </div>
+            <div class="col-xs-6">
+                  <div class="field">
+                    <%= form.label "Fecha Inicio" %>
+                    <%= form.date_field :fechaInicio, id: :puesto_fechaInicio, class: "form-control", placeholder:"Fecha Inicio" %><br><br>
+                  </div>
+            </div>
 
-                      <div class="field">
-                        <%= form.label "Fecha Fin" %>
-                        <%= form.date_field :fechaFin, id: :puesto_fechaFin, class: "form-control", placeholder:"Fecha Fin" %><br><br>
-                      </div>
+            <br><br>
 
-          </div>
-          <div class="col-xs-2">
+            <div class="col-xs-6">
+                <div class="field">
+                    <%= form.label "Hora Entrada" %>
+                    <%= form.time_field :hora_entrada, id: :puesto_hora_entrada, class: "form-control" %><br><br>
+                </div>
+            </div>
+
+            <br><br>
+
+            <div class="col-xs-6">
+                  <div class="field">
+                    <%= form.label "Hora Salida " %>
+                    <%= form.time_field :hora_salida, id: :puesto_hora_salida, class: "form-control" %><br><br>
+                  </div>
+            </div>
+
+            <br><br>
+
+            <div class="col-xs-6">
+                  <div class="field">
+                      <%= form.label "Fecha Fin" %>
+                      <%= form.date_field :fechaFin, id: :puesto_fechaFin, class: "form-control", placeholder:"Fecha Fin" %><br><br>
+                  </div>
+            </div>
+
+            <br><br>
+          
+            <div class="col-xs-2">
               <div class="field">
-                          <%= form.label "Dejar Puesto" %>
-                          <%= form.check_box :estado, id: :puesto_estado %>
+                    <%= form.label "Dejar Puesto" %>
+                    <%= form.check_box :estado, id: :puesto_estado %>
                     </div>
-          </div>
-          <div class="col-xs-3">
-          </div>
-      </div>
-    </div>
+              </div>
+        </div>
+    
 
+</div>
+
+  
         <div class="col-xs-3">
           <div class="actions">
               <%= form.submit "Guardar", :class=>"button-guardar" %>
           </div>
           <% end %>
         </div>
+
+</div>
+
+</div>
