@@ -89,7 +89,7 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def puesto_params
-      params.require(:puesto).permit(:direccion, :turno, :hora_entrada, :hora_salida, :cliente_id, :regis_guardium_id, :estado, :fechaInicio, :fechaFin, :producto_id, :cantidad, productos_attributes:[:nomProducto, :caracteristica, :categoria_id, :identificador, :cantidad, :puesto_id])
+      params.require(:puesto).permit(:direccion, :turno, :hora_entrada, :hora_salida, :cliente_id, :guardia_id, :estado, :fechaInicio, :fechaFin, :producto_id, :cantidad, productos_attributes:[:nomProducto, :caracteristica, :categoria_id, :identificador, :cantidad, :puesto_id])
     end
 end 
  

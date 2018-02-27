@@ -13,19 +13,16 @@ class ProductosController < ApplicationController
 
   # GET /productos/1
   # GET /productos/1.json
-  def show
+ def show
+      @sumar = 0
+      @producto.producto_puestos.each do |detalle|
+      @sumar += detalle.cantidadAsignada 
+      end
 
-    # @sumar = 0
-     # if params[:id]
-      #  @sumar =  @producto.cantidad - @puesto.cantidad 
-     #else
-     #end
-     #@producto.cantidad = "cantidadTotalStock" 
-     #@puesto.cantidad = "cantidadAsignado"
-     #@restaStock = cantidadTotalStock - cantidadAsignado
-     #@cantidadDisponible = @restaStock
+  end
 
-     
+  def sumar 
+
   end
 
   
@@ -60,15 +57,15 @@ class ProductosController < ApplicationController
   # PATCH/PUT /productos/1.json
   def update
     respond_to do |format|
+      #@producto.cantidad = "cantidadTotalStock" 
+     #@puesto.cantidad = "cantidadAsignado"
+     #@restaStock = cantidadTotalStock - cantidadAsignado
+     #@cantidadDisponible = @restaStock
+
+
       
       if @producto.update(producto_params)
-       
-       @producto.cantidad = cantStock
-       @puesto.cantidad = cantAsig
-       @restaStock = cantStock - cantAsig
-
-       @producto.update(cantidad: restaStock)
-    
+         
 
         format.html { redirect_to @producto, notice: 'Se ha actualizado.' }
         format.json { render :show, status: :ok, location: @producto }
@@ -100,6 +97,6 @@ class ProductosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def producto_params
-      params.require(:producto).permit(:nomProducto, :caracteristica, :categoria_id, :identificador, :cantidad)
+      params.require(:producto).permit(:nomProducto, :caracteristica, :categoria_id, :identificador, :cantidad, :cantidadDisponible)
     end
 end

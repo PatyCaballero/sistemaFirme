@@ -71,6 +71,7 @@ class PuestosController < ApplicationController
         format.json { render json: @puesto.errors, status: :unprocessable_entity }
       end
     end
+    #producto.update(producto_params)
   end
 
   # PATCH/PUT /puestos/1
@@ -110,6 +111,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def puesto_params
-      params.require(:puesto).permit(:direccion, :turno, :hora_entrada, :hora_salida, :cliente_id, :estado, :fechaInicio, :fechaFin, :producto_id, :cantidad, :cantidadDisponible, :guardia_id, puesto_puestos_attributes: [:id, :puesto_id, :guardia_id])
+      params.require(:puesto).permit(:direccion, :turno, :hora_entrada, :hora_salida, :cliente_id, :estado, :fechaInicio, :fechaFin, :producto_id, :cantidad, :cantidadDisponible, :guardia_id, puesto_puestos_attributes: [:id, :puesto_id, :guardia_id], producto_puestos_attributes: [:id, :puesto_id, :producto_id, :cantidadAsignada])
     end
 end 
