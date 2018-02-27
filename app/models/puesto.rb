@@ -12,7 +12,9 @@ class Puesto < ApplicationRecord
 	has_many :puesto_puestos
 	accepts_nested_attributes_for  :puesto_puestos, allow_destroy: true
 	
-	
+	has_many :producto_puestos
+	accepts_nested_attributes_for  :producto_puestos, allow_destroy: true
+
 	
 	#Paginacion
 	self.per_page = 10 
