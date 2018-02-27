@@ -35,8 +35,19 @@
 					</p></td>
 
           <td><p>
-            <strong>Cantidad:</strong>
+            <strong>Cantidad Total:</strong>
             <%= @producto.cantidad %>
+          </p></td>
+
+          <td><p>
+            <strong>Cantidad Asignado:</strong>
+               <%= @sumar %>
+          </p></td>
+
+          <td><p>
+            <strong>Cantidad Disponible:</strong>
+            <%= @producto.cantidad - @sumar %>
+             
           </p></td>
 
 			</tr>

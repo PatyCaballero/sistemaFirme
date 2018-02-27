@@ -8,14 +8,11 @@
       
         <div class="col-xs-5">        
         </div>
-        <!-- BUSCADOR -->
-        <div class="col-xs-4">       
-             <%= form_tag puestos_path, :method => 'get' do %>
-                <p>
-                  <%= text_field_tag :search, params[:search] %>
-                  <%= submit_tag "Buscar", :name => nil %>
-                </p>
-            <% end %>
+        <div class="col-xs-3">
+
+                      <%= link_to new_producto_path, class: 'btn btn-success' do %>
+                    <i class="glyphicon glyphicon-calendar"></i> Nuevo Registro
+                     <% end %>
         </div>
 <div class="col-xs-12">
             <div class="jumbotron">
@@ -29,9 +26,10 @@
                         <tr>
                             <th>Categoria </th>
                             <th>Identificador </th>
-                            <th>Nombre producto</th>
+                            <th>Nombre</th>
                             <th>Caracteristica</th>
-                            <th>Cantidad </th>
+                            <th>Cantidad Total</th>
+                           <!-- <th>Cantidad Disponible</th> -->
                             <th colspan="3"></th>
                           </tr>
                         </thead>
@@ -44,6 +42,8 @@
                               <td><%= producto.nomProducto %></td>
                               <td><%= producto.caracteristica %></td>
                               <td><%= producto.cantidad %></td>
+                              <!--<td><%= producto.cantidadDisponible %></td> -->
+                             
                               <td><%= link_to producto, class: 'btn btn-info' do %>
                                 <i class="glyphicon glyphicon-eye-open"></i> Ver <% end %> 
                             </td>
@@ -66,12 +66,7 @@
             </div>
           </div>
 
-          <div class="col-xs-3">
-
-                      <%= link_to new_producto_path, class: 'btn btn-success' do %>
-                    <i class="glyphicon glyphicon-calendar"></i> Nuevo Registro
-                     <% end %>
-          </div>
+          
 
            <div class="col-xs-5">
           </div>
