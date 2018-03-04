@@ -1,5 +1,5 @@
 class ReportesController < ApplicationController
-  before_action :set_reporte, only: [:show, :edit, :update, :destroy]
+  before_action :set_reporte, only: [:show, :edit, :update, :destroy] 
 
   # GET /reportes
   # GET /reportes.json
@@ -70,6 +70,6 @@ class ReportesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reporte_params
-      params.require(:reporte).permit(:horaEntrada, :horaSalida, :estado, :novedad,:puesto_id)
+      params.require(:reporte).permit(:estado, :novedad,:puesto_id, :horaEntrada, :horaSalida)
     end
 end
