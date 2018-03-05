@@ -15,7 +15,6 @@
                 <table class="table table-hover">
                     <thead>
                       	<tr>
-                          <th>Guardia</th>
                           <th>Puesto</th>
                       		<th>Hora Entrada</th>
                       		<th>Hora Salida</th>
@@ -30,15 +29,15 @@
               
 
               <td><p class="navbar-text">
-                  <%= @reporte.puesto.cliente.id %>
+                  <%= @reporte.puesto.cliente.nombre %>
               </p></td>
 
 							<td><p class="navbar-text">
-							    <%= @reporte.horaEntrada %>
+							    <%= l(@reporte.horaEntrada, :format => :long) %>
 							</p></td>
 
 							<td><p class="navbar-text">
-							   <%= @reporte.horaSalida %>
+							   <%= l(@reporte.horaSalida, :format => :long) %>
 							</p></td>
 
 							<!--<p>

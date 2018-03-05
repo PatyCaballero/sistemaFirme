@@ -23,7 +23,6 @@
                     <table class="table table-hover">
                       <thead>
                         <tr>
-                            <th> Guardia </th>
                             <th> Puesto </th>
                             <th>FechaHora Ent</th>
                             <th>FechaHora Sal</th>
@@ -37,9 +36,9 @@
                         <% @reportes.each do |reporte| %>
                         <tr>
                          
-                         
-                          <td><%= reporte.horaEntrada %></td>
-                          <td><%= reporte.horaSalida %></td>
+                          <td><%= reporte.puesto.cliente.nombre %></td>
+                          <td><%= l(reporte.horaEntrada, :format => :short) %></td>
+                          <td><%= l(reporte.horaSalida, :format => :short) %></td>
                           <!--<td><%= reporte.estado %></td>--> 
                           <td><%= reporte.novedad %></td>
 

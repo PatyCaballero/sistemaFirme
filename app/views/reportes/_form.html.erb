@@ -25,6 +25,12 @@
                     </div><br><br>
 
                     <div class="field">
+                        <%= form.label "Guardia" %>
+                        <%= form.collection_select(:puesto_id, Guardia.all, :id, :nombre) %>
+                    </div><br><br>
+
+
+                    <div class="field">
                         <%= form.label "Fecha y Hora Entrada" %>
                         <%= form.datetime_field :horaEntrada, id: :reporte_horaEntrada %>
                     </div><br><br>
