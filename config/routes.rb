@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   
 
+   
+
+  #resources :imprimir_lista
+  resources :producto_puestos
+  resources :guardias
+  resources :puesto_puestos
   resources :turnos
 
   resources :presupuestooos do
@@ -19,14 +25,15 @@ Rails.application.routes.draw do
             get 'pdf'
           end
         end
+
   resources :clientes
-  resources :asignar_puestos
+  
   resources :registro_clientes
   resources :reportes
   resources :presupuesto_creates
   resources :crea_presupuestos
   resources :crear_presupuestos
-  resources :regis_guardia
+  
   resources :puesto_registros
   resources :guardia_registros
   resources :presupuestos
@@ -37,7 +44,7 @@ Rails.application.routes.draw do
   get 'lista_puestos/index'
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'regis_guardia#index'
+  root 'guardias#index'
 
   post 'stock/incStock'
 
