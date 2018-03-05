@@ -14,6 +14,12 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
 	inflect.irregular 'stocks', 'stock'
 	inflect.irregular 'controlStock', 'controlStock'
 	inflect.irregular 'categoria', 'categorias'
+	inflect.irregular 'presupuesto', 'presupuestos'
+	inflect.irregular 'puesto_guardia', 'puesto_guardias'
+	inflect.irregular 'guardia', 'guardias'
+	inflect.irregular 'producto_puesto', 'producto_puestos'
+	inflect.irregular 'lista', 'listas'
+	
  end
 
 # These inflection rules are supported but not enabled by default:
