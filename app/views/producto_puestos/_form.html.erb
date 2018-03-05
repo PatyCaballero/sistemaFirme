@@ -1,0 +1,17 @@
+<%= form_with(model: producto_puesto, local: true) do |form| %>
+  <% if producto_puesto.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(producto_puesto.errors.count, "error") %> prohibited this producto_puesto from being saved:</h2>
+
+      <ul>
+      <% producto_puesto.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
