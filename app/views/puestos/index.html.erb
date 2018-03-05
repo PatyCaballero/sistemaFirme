@@ -27,15 +27,6 @@
                           <th>Puesto</th>
                           <th>Guardia</th>
                           <th>Hora Entrada</th>
-                          
-                          <!--<th>Cantidad Disponible</th>
-                          <th>Equipamientos</th>
-                          
-                          <th>Fecha Inicio</th>
-                          <th>Hora Salida</th>
-                          <th>Fecha Fin</th>
-                          <th>Estado</th>
-                          <th> Cantidad Total </th> -->
                           <th colspan="3"></th>
                         </tr>
                       </thead>
@@ -45,7 +36,7 @@
                           <tr>
                             <td><%= puesto.cliente.nombre %></td> 
                             <td><%= puesto.guardia_id %></td>
-                            <td><%= puesto.hora_entrada %></td>
+                          <td><%= puesto.hora_entrada %></td>
 
                             <td><%= link_to puesto , class: 'btn btn-info' do %>
                                 <i class="glyphicon glyphicon-eye-open"></i> Ver <% end %> 
